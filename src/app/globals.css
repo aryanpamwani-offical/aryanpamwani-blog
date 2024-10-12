@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { min-height: 100% }
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+      
+      /* Grey */
+      --grey-001:#000000;
+      --grey-002:#2B2B2B;
+      --grey-003:#575757;
+      --grey-004:#828282;
+      --grey-005:#ADADAD;
+      --grey-006:#D9D9D9;
+      --grey-007: #FFFFFF;
+
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
+  }
+ 
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+
+.roboto{
+  font-family: "Roboto", sans-serif;
+  
+}
+
+.inter{
+  font-family: 'Inter';
+}
+
+.opens-sans{
+  font-family: "Open Sans";
+}
+
+.space-grotesk{
+  font-family: "Space Grotesk";
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+  margin: auto;
+}
+
+.icon-dark{
+filter: grayscale(1) invert(1);
+}
+.input-fields{
+  @apply rounded-lg border-slate-950 border
+  w-4/5 outline-none px-5 text-center  
+  mb-5 space-grotesk
+}
+.input-textarea{
+  @apply rounded-lg border-slate-950 
+  w-4/5 h-40 border outline-none px-5 py-4 mb-8
+   text-center  space-grotesk
+}
+.input-textarea-dark{
+  @apply rounded-lg border-white  bg-transparent
+  w-4/5 h-40 border outline-none px-5 py-4 mb-8
+   text-center  space-grotesk
+}
+
+.input-fields-dark{
+  @apply rounded-lg border-white border bg-transparent w-4/5 outline-none px-5 text-center   space-grotesk
+}
+.arrow-btn{
+  @apply bg-slate-500 hover:bg-slate-800
+}
+/* Navbar */
+
+.nav-resp-height{
+  height: 90px;
+}
+.nav-animate-open {
+  transition: 1000ms;
+}
+.nav-animate-ul{
+  transition: 1000ms;
+}
+.navbar {
+  @apply lg:flex md:flex sm:hidden hidden flex-row flex-wrap bg-inherit w-full h-24 fixed content-center z-50;
+}
+
+.navbar.nav-light {
+  @apply border-b border-[color:var(--grey-006)];
+}
+
+.navbar.nav-dark {
+  @apply border-b border-[color:var(--grey-004)];
+}
+
+/* BlogPost */
+.blogpost{
+  @apply h-full border border-opacity-60 rounded-lg overflow-hidden
+}
+
+.blogpost-category{
+   @apply  tracking-widest text-xs  font-medium mb-1  space-grotesk
+}
+.blogpost-category-light{
+  @apply text-[color:var(--grey-003)];
+}
+.blogpost-category-dark{
+  @apply text-[color:var(--grey-005)]
+}
+.blogpost-dark {
+  @apply bg-[color:var(--grey-002)] border-t border-[color:transparent];
+}
+/* Theme Buttons */
+.theme-btn {
+  @apply fixed w-20 h-16 rounded-2xl z-40 bottom-8 right-8 shadow-md flex items-center justify-evenly cursor-pointer;
+}
+
+.dark-btn {
+  @apply bg-[var(--grey-001)] text-[var(--grey-007)];
+}
+
+.light-btn {
+  @apply bg-[var(--grey-007)] text-[var(--grey-001)]; 
+}
+/* Footer */
+.footer {
+  @apply flex flex-col justify-center m-auto text-inherit items-center mt-auto w-full;
+}
+
+
+.footer-light {
+  @apply bg-inherit border-t border-[color:var(--grey-006)];
+}
+
+.footer-dark {
+  @apply bg-[color:var(--grey-001)] border-t border-[color:var(--grey-004)];
+}
+
+
+.underline-effect::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px; /* Positioning the underline */
+  height: 2px; /* Height of the underline */
+  background: currentColor; /* Color of the underline */
+  transform: scaleX(0); /* Start with the underline hidden */
+  transition: transform 0.3s ease; /* Animation for the underline */
+}
+
+.underline-effect:hover::after,
+.underline-effect:focus::after,
+.underline-effect:active::after {
+  transform: scaleX(1); /* Show the underline */
+}
+.underline-effect:focus::after
+ {
+ font-weight:600; /* Show the underline */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scroll {
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+/* Spinner */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--grey-007);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  opacity: .5;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
