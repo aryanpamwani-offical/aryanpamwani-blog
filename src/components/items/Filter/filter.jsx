@@ -46,14 +46,14 @@ const FilterBtn = () => {
             {
               projectData.slice(current, current + 3).map((item) => (<>
              
-                <li  key={item._id} className="relative inter underline-effect cursor-pointer text-center justify-center my-auto items-center">{item.name}</li>
+                <li  key={item._id} className="relative inter underline-effect  cursor-pointer text-center justify-center my-auto items-center">{item.name}</li>
                 </>   ))
             }
           </ul>
-          <ul className={`lg:hidden md:hidden flex sm:hidden flex-row mb-10 w-full overflow-x-scroll overflow-y-hidden flex-nowrap border-b py-2 scroll ${lightTheme ? "border-[color:var(--grey-006)]" : "border-[color:var(--grey-004)]"}`}>
+          <ul className={`lg:hidden md:hidden flex sm:hidden flex-row mb-10  w-full overflow-x-scroll overflow-y-hidden flex-nowrap border-b py-2 scroll ${lightTheme ? "border-[color:var(--grey-006)]" : "border-[color:var(--grey-004)]"}`}>
             
           {current === 0 && (
-              <li className="relative inter underline-effect cursor-pointer mr-16 text-center justify-center my-auto items-center">All</li>
+              <li className="relative inter underline-effect cursor-pointer  mr-16 text-center justify-center my-auto items-center">All</li>
             )}
             
             {
