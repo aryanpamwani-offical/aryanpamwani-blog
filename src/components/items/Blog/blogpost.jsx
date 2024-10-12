@@ -37,15 +37,18 @@ const Blogpost = () => {
               {
 
                 Item.map(item => {
-                  return<div className='flex w-full' key={item._id}> <BlogItems
-                    imgUrl={item.imgUrl}
-                    title={item.name}
-                    desc={item.content}
-                    category={item.categoryName}
-                    
+                  return <div class="p-4 md:w-1/3" key={item._id}>
+                 <BlogItems 
+                 title={item.name}
+                 desc={item.content}
+                 imgUrl={item.imgUrl}
+                 category={item.categoryName}
+                 postId={item._id}
 
-                  />
-                  </div>
+                 
+                 />
+                </div>
+                 
                 })
               }
 

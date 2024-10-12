@@ -9,7 +9,7 @@ const BlogItems = ({imgUrl,title,desc,category,postId}) => {
   const lightTheme=useSelector((state)=>state.themeKey);
   return (
    
-    <div class="p-4 md:w-1/3">
+    
     <div className={lightTheme?"blogpost footer-light ":"blogpost blogpost-dark"}>
       <img className="lg:h-48 md:h-36 w-full object-cover object-center"  src={imgUrl} alt="blog"/>
       <div class="p-6">
@@ -37,7 +37,7 @@ const BlogItems = ({imgUrl,title,desc,category,postId}) => {
         </div>
       </div>
     </div>
-  </div>
+ 
       
   )
 }
