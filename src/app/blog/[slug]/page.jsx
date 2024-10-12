@@ -1,11 +1,12 @@
 'use client'
 import Spinner from '@/components/items/Spinner/Spinner';
 import axios from 'axios';
-import { useParams } from 'next/navigation'
+import { useParams } from 'next/navigation';
+
 
 import React, { useEffect, useState } from 'react'
 
-const page = () => {
+const Page = () => {
   const { slug } = useParams();
 
   const [getLoader, setLoader] = useState(false);
@@ -55,4 +56,4 @@ getPost && Object.keys(getPost).length >0  &&
   
 }
 
-export default page
+export default Page

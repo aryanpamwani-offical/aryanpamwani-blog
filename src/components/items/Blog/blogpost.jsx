@@ -35,15 +35,17 @@ const Blogpost = () => {
           <section class="container px-5 py-24 mx-auto body-font">
             <div class="flex flex-wrap -m-4">
               {
+
                 Item.map(item => {
-                  return <BlogItems
+                  return<div className='flex w-full' key={item._id}> <BlogItems
                     imgUrl={item.imgUrl}
                     title={item.name}
                     desc={item.content}
                     category={item.categoryName}
-                    postId={item._id}
+                    
 
                   />
+                  </div>
                 })
               }
 
