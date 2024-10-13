@@ -201,7 +201,7 @@ filter: grayscale(1) invert(1);
 
 
 .footer-light {
-  @apply bg-inherit border-t border-[color:var(--grey-006)];
+  @apply bg-[color:var(--grey-007)] border-t border-[color:var(--grey-006)];
 }
 
 .footer-dark {
