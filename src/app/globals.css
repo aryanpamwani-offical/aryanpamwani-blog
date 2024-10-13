@@ -154,7 +154,7 @@ filter: grayscale(1) invert(1);
   transition: 1000ms;
 }
 .navbar {
-  @apply lg:flex md:flex sm:hidden hidden flex-row flex-wrap bg-inherit w-full h-24 fixed content-center z-50;
+  @apply lg:flex md:flex sm:hidden hidden flex-row flex-wrap bg-inherit w-full h-24 fixed content-center z-50 ;
 }
 
 .navbar.nav-light {
