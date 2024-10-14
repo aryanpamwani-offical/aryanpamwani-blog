@@ -201,11 +201,7 @@ filter: grayscale(1) invert(1);
 
 
 .footer-light {
-<<<<<<< HEAD
-  @apply bg-[color:var(--grey-007)] border-t border-[color:var(--grey-006)];
-=======
   @apply bg-[var(--grey-007)] border-t border-[color:var(--grey-006)];
->>>>>>> d38853e (Adding Redux Api)
 }
 
 .footer-dark {
