@@ -1,5 +1,5 @@
 "use client";
-import { useAppSelector } from '@/components/Features/store';
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'

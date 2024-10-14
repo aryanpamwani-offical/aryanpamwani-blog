@@ -1,8 +1,9 @@
 "use client"
+import { toggleTheme } from '@/components/Features/reducers/themeSlice';
 import Image from 'next/image'
 import React from 'react'
 
-import { toggleTheme } from "@/components/Features/themeSlice";
+
 import { useDispatch, useSelector } from 'react-redux';
 const ThemeChooser = () => {
     const lightTheme=useSelector((state)=>state.themeKey);

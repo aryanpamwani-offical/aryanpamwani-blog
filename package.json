@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "dev": "next dev",
     "dev-turbo": "next dev",
+=======
+    "dev": "next dev --turbo",
+>>>>>>> d38853e (Adding Redux Api)
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,16 +20,34 @@
     "@radix-ui/react-select": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.0",
     "@reduxjs/toolkit": "^2.2.8",
+<<<<<<< HEAD
+=======
+    "@tiptap/core": "^2.8.0",
+    "@tiptap/extension-code-block-lowlight": "^2.8.0",
+    "@tiptap/extension-color": "^2.8.0",
+    "@tiptap/extension-heading": "^2.8.0",
+    "@tiptap/extension-horizontal-rule": "^2.8.0",
+    "@tiptap/extension-image": "^2.8.0",
+    "@tiptap/extension-link": "^2.8.0",
+    "@tiptap/extension-placeholder": "^2.8.0",
+    "@tiptap/extension-text-style": "^2.8.0",
+    "@tiptap/extension-typography": "^2.8.0",
+    "@tiptap/extension-underline": "^2.8.0",
+>>>>>>> 1a12339f4e8f104c1d13ba263f74836b34f4a318
     "@tiptap/pm": "^2.8.0",
     "@tiptap/react": "^2.8.0",
     "@tiptap/starter-kit": "^2.8.0",
     "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "lowlight": "^3.1.0",
     "lucide-react": "^0.452.0",
     "next": "14.2.14",
+<<<<<<< HEAD
     "react": "^18",
     "react-dom": "^18",
+=======
+>>>>>>> 1a12339f4e8f104c1d13ba263f74836b34f4a318
     "react-hook-form": "^7.53.0",
     "react-icons": "^5.3.0",
     "react-redux": "^9.1.2",

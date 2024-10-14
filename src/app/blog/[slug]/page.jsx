@@ -5,12 +5,14 @@ import { useParams } from 'next/navigation';
 
 
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 
 const Page = () => {
   const { slug } = useParams();
 
   const [getLoader, setLoader] = useState(false);
   const [getPost, setgetPost] = useState([]);
+  const categoryData=useSelector((state)=>state.fetch);
   useEffect(() => {
     axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showsingle/${slug}`).then((res) => {
       setgetPost(res.data.data.selectedPost)
@@ -21,6 +23,7 @@ const Page = () => {
 
 
   }, [slug])
+
 
 
 let postItems=Object.keys(getPost);

@@ -4,13 +4,15 @@ import "./globals.css";
 import Navbar from "@/components/items/Navbar/Nav";
 import ThemeChooser from "@/components/items/Theme/theme";
 import Footer from "@/components/items/Footer/Footer";
-import { store } from "@/components/Features/store";
+
 import { Provider } from "react-redux";
+import { store } from "@/components/Features/store/store";
 
 
 export default function RootLayout({ children }) {
   return (
     <Provider store={store}>
+      
       <html lang="en">
         <body>
           <ThemeMaker>
