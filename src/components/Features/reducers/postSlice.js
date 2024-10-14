@@ -32,6 +32,7 @@ export  const fetchpostSliceReduc=createSlice({
         })
  
         // Fetch Single Post
+        
 
         builder.addCase(fetchPostSingle.pending,(state)=>{
             state.loading=true;
