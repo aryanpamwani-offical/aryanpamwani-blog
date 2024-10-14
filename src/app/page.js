@@ -10,8 +10,7 @@ export default function Home() {
    <>
  <Hero/>
  <SearchBar/>
- <FilterBtn/>
- <Blogpost/>
+
 
    </>
    

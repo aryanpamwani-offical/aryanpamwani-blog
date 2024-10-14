@@ -123,7 +123,7 @@ const Page = () => {
               
                :    categoryData.data?.allCategories?.slice().reverse().map((item) => {
 
-                 return <SelectItem value={item._id}>{item.name}</SelectItem>
+                 return <SelectItem value={item._id} key={item._id}>{item.name}</SelectItem>
                }
                 )
                
