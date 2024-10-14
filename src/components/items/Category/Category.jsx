@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Spinner from '@/components/items/Spinner/Spinner';
 import BlogItems from '../Blog/Items';
+import { Button } from '@/components/ui/button';
 
 const Category = () => {
   const [current, setCurrent] = useState(0);
@@ -26,6 +27,7 @@ const Category = () => {
   if (!allPosts) {
     console.log("No Category Found");
     return;
+    
   }
   else{
     if (allPosts.length > 0) {
@@ -56,7 +58,7 @@ const handlePost = async (id) => {
     try {
       const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall/`);
       const allPosts = await response.data.allCategories; // Assuming the posts are in response.data.allPosts
-  
+      console.log(allPosts)
       // Log the response to verify the structure
       // console.log('API Response:', response.data);
   
@@ -68,12 +70,15 @@ const handlePost = async (id) => {
       });
       // Log the filtered posts to verify the filtering logic
       // console.log('Filtered Posts:', filteredPosts);
-  
-      if (filteredPosts.length > 0) {
+      if (id == 'all') {
+        setItem(allPosts);
+        setloading(true);
+      } 
+     else if (filteredPosts.length > 0) {
         setItem(filteredPosts)
         setloading(true);
       } else {
-        setItem(allPosts) 
+        setItem([]) 
         setloading(true);
         // Checking for date
         // console.log(allPosts.Date);
@@ -83,7 +88,7 @@ const handlePost = async (id) => {
     }
   };
 
-
+console.log(Item)
   return (
     <>
     {/* Category Starts Here */}
@@ -98,7 +103,7 @@ const handlePost = async (id) => {
           { loading?(<>
           
             {current === 0 && (
-             <li onClick={()=>handlePost()} className="relative inter underline-effect cursor-pointer text-center justify-center my-auto items-center">All</li>
+             <li onClick={()=>handlePost("all")} className="relative inter underline-effect cursor-pointer text-center justify-center my-auto items-center">All</li>
            )}
             {
               projectData.slice(current, current + 3).map((item)  =>  {
@@ -125,7 +130,7 @@ const handlePost = async (id) => {
           <ul className={`lg:hidden md:hidden flex sm:hidden flex-row mb-10 w-full overflow-x-scroll overflow-y-hidden flex-nowrap border-b py-2 scroll ${lightTheme ? "border-[color:var(--grey-006)]" : "border-[color:var(--grey-004)]"}`}>
             
           {current === 0 && (
-              <li className="relative inter underline-effect cursor-pointer mr-16 text-center justify-center my-auto items-center">All</li>
+              <li onClick={()=>handlePost("all")} className="relative inter underline-effect cursor-pointer mr-16 text-center justify-center my-auto items-center">All</li>
             )}
             
             {
@@ -151,37 +156,35 @@ const handlePost = async (id) => {
 {/* Blogpost Starts Here */}
 
 {loading ? (
+  <>
+    <section className="container px-5 py-24 mx-auto body-font">
+      <div className="flex flex-wrap -m-4">
+        {Item.length > 0 ? (
+          Item.map(item => (
+            <div className="p-4 md:w-1/3" key={item._id}>
+              <BlogItems 
+                title={item.name}
+                desc={item.content}
+                imgUrl={item.imgUrl}
+                category={item.categoryName}
+                postId={item._id}
+                date={item.Date}
+              />
+            </div>
+          ))
+        ) : (
+          <div className="w-full text-center py-10">
+            <h2 className="text-2xl font-semibold mb-4">No Posts Found</h2>
+            <Button variant={lightTheme?'default':'dark'} className="inter" onClick={()=>handlePost("all")}>Back</Button>
+          </div>
+        )}
+      </div>
+    </section>
+  </>
+) : (
+  <Spinner />
+)}
 
-
-<>
-  <section className="container px-5 py-24 mx-auto body-font">
-    <div className="flex flex-wrap -m-4">
-      {
-
-        Item.map(item => {
-          return <div className="p-4 md:w-1/3" key={item._id}>
-         <BlogItems 
-         title={item.name}
-         desc={item.content}
-         imgUrl={item.imgUrl}
-         category={item.categoryName}
-         postId={item._id}
-         date={item.Date}
-         
-         />
-        </div>
-         
-        })
-      }
-
-    </div>
-
-  </section>
-
-
-</>
-) : <Spinner />
-}
 {/* Blogpost Ends Here */}
 
     </>
