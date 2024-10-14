@@ -23,7 +23,8 @@ const BlogItems = ({imgUrl,title,desc,category,postId,date}) => {
         <h2 className={lightTheme?"blogpost-category blogpost-category-light":"blogpost-category blogpost-category-dark"}>{category}</h2>
         <h1 className="title-font text-lg font-medium text-[color:var(--grey-002) mb-3 opens-sans">{title}</h1>
         <h2 className={lightTheme?"blogpost-category blogpost-category-light":"blogpost-category blogpost-category-dark"}>{dateFormat}</h2>
-        <p className="leading-relaxed mb-3 text-[color:var(--grey-004)] inter">{desc}</p>
+        <div className="leading-relaxed mb-3 text-[color:var(--grey-004)] inter ProseMirror"  dangerouslySetInnerHTML={{ __html: desc }}/>
+        
         <div className="flex items-center flex-wrap ">
         <Link href={`/blog/${postId}`} className={`opens-sans ${buttonVariants({ variant:lightTheme? "default_borderless":"dark" })}`}>Read More
           
