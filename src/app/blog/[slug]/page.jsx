@@ -1,38 +1,45 @@
-'use client'
+
 import Spinner from '@/components/items/Spinner/Spinner';
 import axios from 'axios';
-import { useParams } from 'next/navigation';
+// import { useParams } from 'next/navigation';
+import { headers } from 'next/headers';
+const  fetchPost=async(slug)=>  {
 
-
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-
-const Page = () => {
-  const { slug } = useParams();
-
-  const [getLoader, setLoader] = useState(false);
-  const [getPost, setgetPost] = useState([]);
-  const categoryData=useSelector((state)=>state.fetch);
-  useEffect(() => {
-    axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showsingle/${slug}`).then((res) => {
-      setgetPost(res.data.data.selectedPost)
-      setLoader(true)
-    }).catch((error) => {
-      console.log(error)
-    })
-
-
-  }, [slug])
+  
+const data=slug;
+console.log(data)
+  try {
+    let response = await  fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showsingle/${data}`);
+    response=await response.json()
+    return response.data.selectedPost
+    
+  }catch (error) {
+  console.log(error);
+  
+}
+}
 
 
 
-let postItems=Object.keys(getPost);
+import React from 'react'
+
+
+const Page = async({params}) => {
+ const {slug}=params;
+ 
+const getPost=await fetchPost(slug);
+  
+ 
+  
+
+
+
 
 return (
   <>
 
-  
-    {getLoader ? 
+  {getPost?
+    
     <section className='container px-5 py-24 mx-auto my-4'>
         {/* {Array.isArray(getPost) ? (
           getPost.map((post) => (

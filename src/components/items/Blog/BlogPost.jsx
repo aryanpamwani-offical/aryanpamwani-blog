@@ -9,7 +9,7 @@ const BlogPost = ({ posts }) => {
     <div className="flex flex-wrap -m-4">
       {
 
-        posts?.map(item => {
+       posts.length? posts.map(item => {
           return <div className="p-4 md:w-1/3" key={item._id}>
          <BlogItems 
          title={item.name}
@@ -22,7 +22,7 @@ const BlogPost = ({ posts }) => {
          />
         </div>
          
-        })
+        }):<></>
       }
 
     </div>
