@@ -31,8 +31,8 @@ const Toolbar = ({editor,content}) => {
         }}
         className={
           editor.isActive("bold")
-            ? "bg-sky-700 text-white p-2 rounded-lg"
-            : "text-sky-400"
+            ? "bg-slate-700 text-white p-2 rounded-lg"
+            : "text-slate-400"
         }
       >
         <Bold className="w-5 h-5" />
@@ -123,8 +123,8 @@ const Toolbar = ({editor,content}) => {
         }}
         className={
           editor.isActive("blockquote")
-            ? "bg-sky-700 text-white p-2 rounded-lg"
-            : "text-sky-400"
+            ? "bg-slate-700 text-white p-2 rounded-lg"
+            : "text-slate-400"
         }
       >
         <Quote className="w-5 h-5" />
