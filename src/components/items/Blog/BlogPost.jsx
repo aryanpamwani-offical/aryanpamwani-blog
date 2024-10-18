@@ -13,7 +13,7 @@ const BlogPost = ({ posts }) => {
           return <div className="p-4 md:w-1/3" key={item._id}>
          <BlogItems 
          title={item.name}
-         desc={item.content}
+         desc={item.shortDesc}
          imgUrl={item.imgUrl}
          category={item.categoryName}
          postId={item._id}

@@ -5,7 +5,7 @@ import fetchpostSliceReducer from "../reducers/fetchpostSlice";
 
 export const store=configureStore({
     reducer:{
-        themeKey:themeSliceReducer,
+        themeSlice:themeSliceReducer,
         fetchCategory:fetchcategorySliceReducer,
         fetchPost:fetchpostSliceReducer
     }

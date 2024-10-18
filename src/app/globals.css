@@ -326,3 +326,7 @@ filter: grayscale(1) invert(1);
   margin: 2rem 0;
 }
 
+
+.transition-theme {
+  @apply transition duration-300 ease-in-out;
+}

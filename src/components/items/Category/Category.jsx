@@ -5,9 +5,10 @@ import BlogPost from '../Blog/BlogPost';
 import Spinner from '../Spinner/Spinner';
 import { Button } from '@/components/ui/button';
 import { useSelector } from 'react-redux';
+import { useTheme } from '@/components/Features/reducers/useTheme';
 
 const CategoryClient = ({ categoryData = [], postData = [] }) => {
-  const lightTheme = useSelector((state) => state.themeKey);
+  const [lightTheme] = useTheme()
   const [current, setCurrent] = useState(0);
   const [filteredPosts, setFilteredPosts] = useState(postData.length > 0 ? postData : []);
   const [loading, setLoading] = useState(false);
@@ -43,7 +44,7 @@ const CategoryClient = ({ categoryData = [], postData = [] }) => {
         {categoryData.length > 0 && (
           <>
             <div
-              className={lightTheme ? "left-arrow bg-[color:var(--grey-006)] hover:bg-[color:var(--grey-004)] hover:text-white p-2 rounded-lg cursor-pointer lg:flex md:flex sm:flex hidden" : "left-arrow bg-[color:var(--grey-002)] hover:bg-[color:var(--grey-003)] hover:text-[color:var(--grey-07)] p-2 rounded-lg cursor-pointer lg:flex md:flex sm:flex hidden"}
+              className={lightTheme ? "transition-theme left-arrow bg-[color:var(--grey-006)] hover:bg-[color:var(--grey-004)] hover:text-white p-2 rounded-lg cursor-pointer lg:flex md:flex sm:flex hidden" : "left-arrow bg-[color:var(--grey-002)] hover:bg-[color:var(--grey-003)] hover:text-[color:var(--grey-07)] p-2 rounded-lg cursor-pointer lg:flex md:flex sm:flex hidden transition-theme"}
               onClick={prevSlide}
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

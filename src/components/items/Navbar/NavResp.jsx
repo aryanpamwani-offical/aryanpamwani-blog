@@ -5,15 +5,16 @@ import Link from 'next/link';
 import { navItems } from './NavData';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
+import { useTheme } from '@/components/Features/reducers/useTheme';
 
 const NavResp = () => {
   const [status, setStatus] = useState(false);
-  const lightTheme = useSelector((state) => state.themeKey);
+  const [lightTheme] =useTheme();
  
   let items=navItems.length;
   return (
     <>
-      <nav className={`transition-all duration-1000 ease-in-out fixed w-full border-b ${lightTheme?"border-[color:var(--grey-006)]":"border-[color:var(--grey-004)]"} z-50 ${status ? 'h-screen lg:hidden md:flex sm:flex flex flex-row flex-wrap bg-inherit' : 'h-24 lg:hidden md:flex sm:flex flex flex-row flex-wrap bg-inherit'}`}>
+      <nav className={`transition-all duration-1000 ease-in-out fixed w-full border-b transition-theme ${lightTheme?"border-[color:var(--grey-006)]":"border-[color:var(--grey-004)]"} z-50 ${status ? 'h-screen lg:hidden md:flex sm:flex flex flex-row flex-wrap bg-inherit' : 'h-24 lg:hidden md:flex sm:flex flex flex-row flex-wrap bg-inherit'}`}>
         <div className="flex justify-start w-1/3 m-auto p-5 h-24">
         <Link href={"/"}><Image src="https://res.cloudinary.com/dttek3gqg/image/upload/v1724921045/navlogo_a1hivv.webp" width={80} height={80} className='w-20 pl-6 ml-10' alt='logo' priority={true} /></Link>
         </div>

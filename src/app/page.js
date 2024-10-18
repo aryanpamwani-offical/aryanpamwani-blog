@@ -40,7 +40,7 @@ export default async function Home({ searchParams }) {
   const Postdata = await postData();
   const searchResults = search ? await searchData(search) : [];
 
-  // console.log(searchResults);
+
 
   return (
     <>

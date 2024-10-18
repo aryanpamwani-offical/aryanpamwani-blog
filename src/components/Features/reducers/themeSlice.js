@@ -1,14 +1,27 @@
-import {createSlice} from "@reduxjs/toolkit";
-let initialValue=true;
+import { createSlice } from "@reduxjs/toolkit";
 
-export  const themeSlice=createSlice({
-    name:"themeSlice",
-    initialState:initialValue,
-    reducers:{
-        toggleTheme:(state)=>{
-            return state=!state;
-        }
-    }
-})
-export const {toggleTheme} = themeSlice.actions;
+let initialValue = true;
+
+if (typeof window !== 'undefined') {
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme !== null) {
+    initialValue = storedTheme === 'true';
+  }
+}
+
+export const themeSlice = createSlice({
+  name: "themeSlice",
+  initialState: initialValue,
+  reducers: {
+    toggleTheme: (state) => {
+      const newState = !state;
+      localStorage.setItem('theme', newState.toString());
+      return newState;
+    },
+    setTheme: (state, action) => action.payload
+  }
+});
+
+export const { toggleTheme, setTheme } = themeSlice.actions;
+
 export default themeSlice.reducer;
