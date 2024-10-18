@@ -41,8 +41,8 @@ const SearchBar = ({ initialSearchResults }) => {
   };
 
   const handleSearchClick = () => {
-    if (debouncedQuery=="") {
-      router.push(`/?search=${debouncedQuery}`);
+    if (debouncedQuery=="" || !debouncedQuery) {
+      console.log("No Query")
     }
     else{
   

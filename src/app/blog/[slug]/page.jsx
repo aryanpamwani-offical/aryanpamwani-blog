@@ -9,7 +9,7 @@ const  fetchPost=async(slug)=>  {
 
   
 const data=slug;
-console.log(data)
+
   try {
     let response = await  fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showsingle/${data}`);
     response=await response.json()
@@ -24,17 +24,35 @@ console.log(data)
 
 
 import React from 'react'
+export const generateMetadata=async({ params})=> {
+  const {slug}=params;
+  
+  const getPost=await fetchPost(slug);
+  const title=await getPost.name;
+  const desc=await getPost.shortDesc;
+  return {
+    title: `${title} | Aryan Pamwani's Blog`,
+    description: `${desc}`,
+    openGraph: {
+      title: `#${params.slug}`,
+      description: `Posts with the tag ${params.slug}`,
+      type: "website",
+      locale: "en_US",
+      url: `https://blog.aryanpamwani.me/blog/${params.slug}`,
+      siteName: "Aryan Pamwani's Blog`",
+    },
+  };
+}
+
 
 
 const Page = async({params}) => {
- const {slug}=params;
- 
-const getPost=await fetchPost(slug);
+  const {slug}=params;
   
-
-
-
-
+  const getPost=await fetchPost(slug);
+ const name=await getPost.name;
+//  console.log(name)
+ 
 
 return (
   <>
