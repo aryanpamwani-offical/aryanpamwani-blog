@@ -8,7 +8,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { dateFormat } from '@/components/dateFormat';
 import { useTheme } from '@/components/Features/reducers/useTheme';
 
-const BlogItems = ({imgUrl,title,desc,category,postId,date}) => {
+const BlogItems = ({imgUrl,title,desc,category,postId,date,slug}) => {
 // Convert desc to a string first
 const description = String(desc);
 const shortDesc = description.length > 100 ? `${description.substring(0, 100)}...`:description; 
