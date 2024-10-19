@@ -3,6 +3,15 @@ import Hero from "@/components/items/HeroSection/Hero";
 import SearchBar from "@/components/items/Search/Search";
 import axios from "axios";
 
+export const fetchPost = async () => {
+  try {
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall`);
+    return response.data?.allCategories;  // Assuming allCategories is the array of posts
+  } catch (error) {
+    console.log(error);
+    return [];  // Return an empty array if there is an error
+  }
+};
 
 export const metadata ={
   metadataBase: new URL("https://blog.aryanpamwani.me"),
@@ -51,7 +60,7 @@ const postData = async () => {
 
 export default async function Home({ searchParams }) {
   const search = searchParams?.search ?? ''; // Safely extract search parameter
-
+ const postfetch=await fetchPost()
   const Categorydata = await categoryData();
   const Postdata = await postData();
   const searchResults = search ? await searchData(search) : [];

@@ -1,43 +1,27 @@
 import { dateFormat } from "@/components/dateFormat";
 
-const  fetchPost=async()=>  {
-  try {
-        let response = await  fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall`);
-        response=await response.json()
-        
-        return response?.allCategories
-        
-      }catch (error) {
-      console.log(error);
-      
-    }
-    }
+import { fetchPost } from "./page";
 
 const sitemap = async() => {
+  
     const posts=await fetchPost();
-   
+    // console.log(posts)
       const postUrl=posts.map((post)=>{
-     return{
-
-         url:`https://blog.aryanpamwani.me/blog/${post._id} `,
-         lastModified: dateFormat(post.Date),
-         changeFrequency: 'weekly',
-         priority: 1,
-     }
+    return{
+      url: `https://blog.aryanpamwani.me/${post.slug}`,
+      lastModified: dateFormat(post.Date),
+    }
       })
+      // console.log(postUrl)
 
-  return [
-...postUrl,
-    {
-        url: 'https://blog.aryanpamwani.me',
-        lastModified: dateFormat(new Date()),
-        changeFrequency: 'yearly',
-        priority: 0.5,
-      },
-  
-  ]
-   
-  
+      return [
+        {
+          url: `https://next-cms-blog-ce.vercel.app/`,
+          lastModified: dateFormat(new Date()),
+        },
+       
+        ...postUrl, 
+      ]
 }
 
 export default sitemap
