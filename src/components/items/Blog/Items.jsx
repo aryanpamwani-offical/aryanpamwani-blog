@@ -27,7 +27,7 @@ const [lightTheme] =useTheme();
         {/* <div className="leading-relaxed mb-3 text-[color:var(--grey-004)] inter "  dangerouslySetInnerHTML={{ __html: desc }}/> */}
         
         <div className="flex items-center flex-wrap ">
-        <Link href={`/blog/${postId}`} className={`opens-sans transition-theme ${buttonVariants({ variant:lightTheme? "default_borderless":"dark" })}`}>Read More
+        <Link href={`/blog/${slug}`} className={`opens-sans transition-theme ${buttonVariants({ variant:lightTheme? "default_borderless":"dark" })}`}>Read More
         </Link>
          
         </div>

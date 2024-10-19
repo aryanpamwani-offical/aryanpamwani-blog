@@ -50,7 +50,7 @@ const Page = async({params}) => {
   const {slug}=params;
   
   const getPost=await fetchPost(slug);
- const name=await getPost.name;
+//  const name=await getPost.name;
 //  console.log(name)
  
 

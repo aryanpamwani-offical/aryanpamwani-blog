@@ -82,7 +82,7 @@ console.log(searchResults);
     <h2 className={`text-xl font-semibold mb-2 ${lightTheme?"text-[var(--grey-002)]":"text-[var(--grey-004)]"}`}>Search Results: -</h2>
     <div className="grid grid-cols-1  gap-4 w-full justify-center m-auto text-center">
       {searchResults?.data?.map(post => {
-      return  <Link key={post._id} href={`/blog/${post._id}`} className={` ${lightTheme?"text-[var(--grey-003)] shadow-[color:var(--grey-006)] shadow-md rounded-lg":"text-[var(--grey-006)] shadow-[var(--grey-002)] shadow-md  rounded-lg "}    flex justify-center p-4  mt-2    `}>
+      return  <Link key={post.slug} href={`/blog/${post._id}`} className={` ${lightTheme?"text-[var(--grey-003)] shadow-[color:var(--grey-006)] shadow-md rounded-lg":"text-[var(--grey-006)] shadow-[var(--grey-002)] shadow-md  rounded-lg "}    flex justify-center p-4  mt-2    `}>
           
             <h3 className="text-lg font-bold">{post.name}</h3>
            

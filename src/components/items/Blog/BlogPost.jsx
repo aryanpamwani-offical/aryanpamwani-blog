@@ -18,6 +18,7 @@ const BlogPost = ({ posts }) => {
          category={item.categoryName}
          postId={item._id}
          date={item.Date}
+         slug={item.slug}
          
          />
         </div>
