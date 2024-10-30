@@ -29,10 +29,12 @@ export const generateMetadata=async({ params})=> {
   
   const getPost=await fetchPost(slug);
   const title=await getPost.name;
+  const keyword=await getPost.keyword;
   const desc=await getPost.shortDesc;
   return {
     title: `${title} | Aryan Pamwani's Blog`,
     description: `${desc}`,
+    keyword: `${keyword}`,
     openGraph: {
       title: `#${params.slug}`,
       description: `Posts with the tag ${params.slug}`,
