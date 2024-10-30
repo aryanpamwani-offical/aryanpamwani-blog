@@ -21,7 +21,7 @@ export const navItems=[
       } ,
     {
       name:"Get in Touch",
-      location:"/contact"
+      location:"https://aryanpamwani.me/contact"
     } ,
    
 

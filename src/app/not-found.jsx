@@ -1,13 +1,12 @@
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:1385556750.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:206066924.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:3017585626.
+
 "use client";
 import React from 'react'
-import { useSelector } from 'react-redux'
+
 import { buttonVariants } from '@/components/ui/button';
 import Link from 'next/link';
+import { useTheme } from '@/components/Features/reducers/useTheme';
  export default function  NotFound(){
-const  lightTheme=useSelector((state)=>state.themeKey);
+  const [lightTheme] = useTheme()
   return (
     <>
     <div className={`flex flex-col w-full m-auto items-center justify-center ${lightTheme ? "bg-[color:var(--grey-007)]" : "bg-[color:var(--grey-001)]"}`}>
