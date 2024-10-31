@@ -285,7 +285,8 @@ input[type="search"]::-webkit-search-cancel-button {
 .HEADING{
   font-weight: 600;
   line-height: 125%;
-  color: var(--grey-003);
+ 
+ 
 }
 
 h2{
@@ -294,7 +295,9 @@ h2{
 
 h3{
   font-size: 2rem; /* 32px */
-  margin:20px auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: auto;
 }
 
 h4{
@@ -334,7 +337,7 @@ p{
 .responsive-image {
   max-width: 37.5rem; 
   height: auto;
-  display: none;
+  display: flex;
   justify-content: center;
   margin: auto;
   margin: 1rem auto;

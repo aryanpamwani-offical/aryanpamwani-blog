@@ -10,9 +10,9 @@ import { useTheme } from '@/components/Features/reducers/useTheme';
 
 const BlogItems = ({imgUrl,title,desc,category,postId,date,slug}) => {
 // Convert desc to a string first
+const [lightTheme] =useTheme();
 const description = String(desc);
 const shortDesc = description.length > 100 ? `${description.substring(0, 100)}...`:description; 
-const [lightTheme] =useTheme();
   return (
    
     
