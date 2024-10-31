@@ -4,6 +4,14 @@ import { dateFormat } from '@/components/dateFormat';
 import Spinner from '@/components/items/Spinner/Spinner';
 import axios from 'axios';
 // import { useParams } from 'next/navigation';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
 
 const  fetchPost=async(slug)=>  {
 
