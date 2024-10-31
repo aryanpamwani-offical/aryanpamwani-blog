@@ -334,7 +334,7 @@ p{
 .responsive-image {
   max-width: 37.5rem; 
   height: auto;
-  display: flex;
+  display: none;
   justify-content: center;
   margin: auto;
   margin: 1rem auto;
