@@ -6,6 +6,8 @@ import Spinner from '../Spinner/Spinner';
 import { Button } from '@/components/ui/button';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@/components/Features/reducers/useTheme';
+import PrevSlide from './Slides/prevSlide';
+import NextSlide from './Slides/nextSlide';
 
 const CategoryClient = ({ categoryData = [], postData = [] }) => {
   const [lightTheme] = useTheme()
@@ -40,17 +42,12 @@ const CategoryClient = ({ categoryData = [], postData = [] }) => {
 
   return (
     <>
-      <div className="flex w-11/12 items-center justify-center">
+    {/* Caurosel Starts */}
+      <div className="flex w-11/12 items-center justify-center mb-10">
         {categoryData.length > 0 && (
           <>
-            <div
-              className={lightTheme ? "transition-theme left-arrow bg-[color:var(--grey-006)] hover:bg-[color:var(--grey-004)] hover:text-white p-2 rounded-lg cursor-pointer lg:flex md:flex sm:flex hidden" : "left-arrow bg-[color:var(--grey-002)] hover:bg-[color:var(--grey-003)] hover:text-[color:var(--grey-07)] p-2 rounded-lg cursor-pointer lg:flex md:flex sm:flex hidden transition-theme"}
-              onClick={prevSlide}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-            </div>
+            <PrevSlide prevSlide={prevSlide}/>
+
             <div className="items-center mx-auto flex flex-row w-full mt-10">
               <ul className="lg:flex md:flex sm:flex hidden flex-row mb-10 justify-evenly w-full">
               {current === 0 && (
@@ -63,17 +60,17 @@ const CategoryClient = ({ categoryData = [], postData = [] }) => {
                 ))}
               </ul>
             </div>
-            <div
-              className={lightTheme ? "right-arrow bg-[color:var(--grey-006)] hover:bg-[color:var(--grey-004)] hover:text-white p-2 rounded-lg cursor-pointer lg:flex md:flex sm:flex hidden" : "right-arrow bg-[color:var(--grey-002)] hover:bg-[color:var(--grey-003)] hover:text-[color:var(--grey-07)] p-2 rounded-lg cursor-pointer lg:flex md:flex sm:flex hidden"}
-              onClick={nextSlide}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </div>
+
+
+           <NextSlide nextSlide={nextSlide}/>
+
           </>
         )}
       </div>
+      
+       {/* Caurosel Ends */}
+
+
       {loading ? (
         <Spinner />
       ) :  (

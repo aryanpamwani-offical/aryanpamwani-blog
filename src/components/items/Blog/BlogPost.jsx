@@ -5,7 +5,7 @@ const BlogPost = ({ posts }) => {
   return (
     
     <>
-  <section className="container px-5 py-24 mx-auto body-font">
+  <section className="container px-5 py-24 mx-auto body-font  mb-20">
     <div className="flex flex-wrap -m-4">
       {
 

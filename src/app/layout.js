@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
                 {children}
                 <Toaster/>
               </div>
-              <ThemeChooser />
+              {/* <ThemeChooser /> */}
               <Footer />
             </div>
           </ThemeMaker>

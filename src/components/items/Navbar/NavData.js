@@ -20,7 +20,7 @@ export const navItems=[
         location:"https://blog.aryanpamwani.me"
       } ,
     {
-      name:"Get in Touch",
+      name:"Hire Me",
       location:"https://aryanpamwani.me/contact"
     } ,
    

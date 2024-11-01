@@ -13,8 +13,8 @@ const Footer = () => {
     <footer
     className={lightTheme?'footer footer-light transition-theme'
     :"footer footer-dark transition-theme"}>
-        <Image src={'https://res.cloudinary.com/dttek3gqg/image/upload/v1724921045/navlogo_a1hivv.webp'} width={220} height={220} alt='logo'  priority={true}/>
-        <div className="flex flex-row jusify-between  my-5 ">
+        <Image src={'https://res.cloudinary.com/dttek3gqg/image/upload/v1724921045/navlogo_a1hivv.webp'} width={220} height={220} alt='logo'  priority={true} className='mt-10'/>
+        <div className="flex flex-row jusify-between  my-10 ">
             <Link href={"https://github.com/aryanpamwani-offical"}>
             <Image src={'https://res.cloudinary.com/dttek3gqg/image/upload/v1724922910/github_daezwy.png'} 
             width={40} height={40}

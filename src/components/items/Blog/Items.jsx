@@ -18,7 +18,7 @@ const shortDesc = description.length > 100 ? `${description.substring(0, 100)}..
     <div className= {`${lightTheme?"blogpost footer-light ":"blogpost blogpost-dark"} transition-theme`} >
       <img className="lg:h-48 md:h-36 w-full object-cover object-center"  src={imgUrl} alt="blog"/>
       <div className="p-6">
-        <h2 className={`${lightTheme?"blogpost-category blogpost-category-light":"blogpost-category blogpost-category-dark"}`}>{category}</h2>
+        <h2 className={`${lightTheme?"blogpost-category blogpost-category-light ":"blogpost-category blogpost-category-dark"}`}>{category}</h2>
         <h1 className="title-font text-lg font-medium text-[color:var(--grey-002) mb-3 opens-sans">{title}</h1>
         <h2 className={`${lightTheme?"blogpost-category blogpost-category-light":"blogpost-category blogpost-category-dark"}`}>{dateFormat(date)}</h2>
      

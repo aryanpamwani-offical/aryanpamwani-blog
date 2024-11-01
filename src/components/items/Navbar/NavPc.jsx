@@ -31,7 +31,7 @@ const NavPc = () => {
         {navItems?.slice(items-1,items).map((items,key )=>{
 
          return <Link href={items.location} key={key} >
-           <Button variant={lightTheme?'default':'dark'} className="inter transition-theme" >{items.name}</Button>
+           <Button variant={lightTheme?'default_border':'dark_border'} className="inter transition-theme" >{items.name}</Button>
           </Link>
            })}
         </ul>

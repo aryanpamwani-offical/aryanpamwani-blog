@@ -54,7 +54,7 @@ const SearchBar = ({ initialSearchResults }) => {
 console.log(searchResults);
   return (
     <>
-      <div className="flex w-full justify-center items-center space-x-2 relative">
+      <div className="flex w-full justify-center items-center space-x-2 relative mt-20">
         <div className="relative w-2/3">
         <BsSearch className={`absolute left-3 top-1/2 transform -translate-y-1/2  ${lightTheme?"text-[color:var(--grey-004)] ":"text-[color:var(--grey-006)] "} `} />
           <Input
