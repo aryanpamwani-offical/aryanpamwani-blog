@@ -1,4 +1,4 @@
-import { dateFormat } from "@/components/dateFormat";
+import { dateFormat } from "@/lib/dateFormat";
 
 import { fetchPost } from "./page";
 

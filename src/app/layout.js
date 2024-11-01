@@ -7,6 +7,7 @@ import Footer from "@/components/items/Footer/Footer";
 
 import { Provider } from "react-redux";
 import { store } from "@/components/Features/store/store";
+import { Toaster } from "@/components/ui/toaster";
 
 
 export default function RootLayout({ children }) {
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
             <div className="relative top-36 overflow-hidden">
               <div className="flex justify-center flex-col w-full m-auto items-center">
                 {children}
+                <Toaster/>
               </div>
               <ThemeChooser />
               <Footer />

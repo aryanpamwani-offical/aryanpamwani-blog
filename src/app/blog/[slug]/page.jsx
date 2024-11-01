@@ -1,19 +1,12 @@
 
 
 import Spinner from '@/components/items/Spinner/Spinner';
-import axios from 'axios';
-// import { useParams } from 'next/navigation';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+
+
+
 import React from 'react'
 import Post from '@/components/items/getPost/Post';
-import { dateFormat } from '@/components/dateFormat';
+import Breadcrum from '@/components/items/Breadcrum/Breadcrum';
 
 
 export const generateMetadata=async({ params})=> {
@@ -62,13 +55,18 @@ const Page = async({params}) => {
 return (
   <>
 
+
+   
+
   {getPost?
     
-    <div className='flex flex-col w-full max-w-[786px]  '>
+    <div className='flex flex-col w-full max-w-[786px] mb-10 '>
       
         {
 
 getPost && Object.keys(getPost).length >0  && 
+<>
+
 
 <Post
 title={getPost.name}
@@ -77,6 +75,9 @@ categoryName={getPost.categoryName}
 body={getPost.content}
 imgUrl={getPost.imgUrl}
 />
+</>
+
+
 
 }
       </div>

@@ -1,11 +1,10 @@
 "use client";
-import React, { useState } from 'react'
+import React, { } from 'react'
 
 import Link from 'next/link';
 
-import { useSelector } from 'react-redux';
 import { buttonVariants } from '@/components/ui/button';
-import { dateFormat } from '@/components/dateFormat';
+import { dateFormat } from '@/lib/dateFormat';
 import { useTheme } from '@/components/Features/reducers/useTheme';
 
 const BlogItems = ({imgUrl,title,desc,category,postId,date,slug}) => {
