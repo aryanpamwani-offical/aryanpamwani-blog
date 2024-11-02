@@ -16,7 +16,7 @@ const sitemap = async() => {
 
       return [
         {
-          url: `https://next-cms-blog-ce.vercel.app/`,
+          url: `https://blog.aryanpamwani.me/`,
           lastModified: dateFormat(new Date()),
         },
        
