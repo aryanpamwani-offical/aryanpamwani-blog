@@ -8,6 +8,7 @@ import Footer from "@/components/items/Footer/Footer";
 import { Provider } from "react-redux";
 import { store } from "@/components/Features/store/store";
 import { Toaster } from "@/components/ui/toaster";
+import GoogleAnalyticsTag from "@/components/items/GoogleAnalytics/GoogleAnalytics";
 
 
 export default function RootLayout({ children }) {
@@ -17,6 +18,9 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body>
           <ThemeMaker>
+          <GoogleAnalyticsTag
+containerId={"GTM-M66VDKVZ"}
+/>
             <Navbar />
             <div className="relative top-36 overflow-hidden">
               <div className="flex justify-center flex-col w-full m-auto items-center">
@@ -27,6 +31,10 @@ export default function RootLayout({ children }) {
               <Footer />
             </div>
           </ThemeMaker>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M66VDKVZ"
+height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe></noscript>
+
         </body>
       </html>
     </Provider>
