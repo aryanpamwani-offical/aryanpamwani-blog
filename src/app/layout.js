@@ -27,7 +27,7 @@ containerId={"GTM-M66VDKVZ"}
                 {children}
                 <Toaster/>
               </div>
-              {/* <ThemeChooser /> */}
+              <ThemeChooser />
               <Footer />
             </div>
           </ThemeMaker>
