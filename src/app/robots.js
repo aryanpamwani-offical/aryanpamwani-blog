@@ -1,6 +1,6 @@
 
 
-const robots = () => {
+export default function robots()  {
 
  return {
     rules: {
@@ -12,4 +12,3 @@ const robots = () => {
   }
 }
 
-export default robots
