@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
     <Provider store={store}>
       
       <html lang="en">
+      <meta name="msvalidate.01" content="718C0BDAE2F6792C99AEDECD101D8077" />
         <body>
           <ThemeMaker>
           <GoogleAnalyticsTag
