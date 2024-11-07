@@ -20,7 +20,7 @@ const Post = ({title,date,categoryName,body,imgUrl}) => {
 <p className={`${lightTheme?"text-[color:var(--grey-004)]":"text-[color:var(--grey-006)]"}`}>{categoryName}</p>
 </div>
 <Breadcrum title={title}/>
-<Image src={imgUrl} alt="" width={786} height={384} className='rounded-2xl lg:h-96 my-10  md:h-80  h-60'/>
+<Image src={imgUrl} alt="" width={786} height={384} className='rounded-2xl lg:h-96 my-10  md:h-80  h-60' priority={true}/>
 
 {parse(body)}        
         
