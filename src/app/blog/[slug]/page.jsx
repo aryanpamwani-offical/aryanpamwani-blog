@@ -1,93 +1,53 @@
-
-
 import Spinner from '@/components/items/Spinner/Spinner';
-
-
-
-import React from 'react'
+import React from 'react';
 import Post from '@/components/items/getPost/Post';
 import Breadcrum from '@/components/items/Breadcrum/Breadcrum';
 
-
-export const generateMetadata=async({ params})=> {
-  const {slug}=params;
-  
-  const getPost=await fetchPost(slug);
-  const title=await getPost.name;
-  const keyword=await getPost.keyword;
-  const desc=await getPost.shortDesc;
-  return {
-    title: `${title} | Aryan Pamwani's Blog`,
-    description: `${desc}`,
-    keyword: `${keyword}`,
-    openGraph: {
-      title: `#${params.slug}`,
-      description: `Posts with the tag ${params.slug}`,
-      type: "website",
-      locale: "en_US",
-      url: `https://blog.aryanpamwani.me/blog/${params.slug}`,
-      siteName: "Aryan Pamwani's Blog`",
-    },
-  };
-}
-
-const  fetchPost=async(slug)=>  {
-  const data=slug;
-    try {
-      let response = await  fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showsingle/${data}`);
-      response=await response.json()
-      return response.data.selectedPost
-      
-    }catch (error) {
+const fetchPosts = async () => {
+  try {
+    let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall/`);
+    response = await response.json();
+    // console.log(response)
+    return response.allCategories; 
+    // Assuming the API returns all posts in this format
+  } catch (error) {
     console.log(error);
-  
+    return [];
   }
-  }
+};
 
-const Page = async({params}) => {
-  const {slug}=params;
- 
-  const getPost=await fetchPost(slug);
-//  const name=await getPost.name;
-//  console.log(name)
- 
+const filterPostBySlug = (posts, slug) => {
+  return posts?.find(post => post.slug === slug);
+};
 
-return (
-  <>
+const Page = async ({ params }) => {
+  const { slug } = params;
 
+  const allPosts = await fetchPosts();
+  const getPost = filterPostBySlug(allPosts, slug);
 
-   
-
-  {getPost?
-    
-    <div className='flex flex-col w-full max-w-[786px] mb-10 '>
-      
-        {
-
-getPost && Object.keys(getPost).length >0  && 
-<>
-
-
-<Post
-title={getPost.name}
-date={getPost.Date}
-categoryName={getPost.categoryName}
-body={getPost.content}
-imgUrl={getPost.imgUrl}
-/>
-</>
-
-
-
-}
+  if (!getPost) {
+    return (
+      <div className="flex flex-col w-full  mb-10">
+        <Spinner />
+        <div className="text-center mt-4">No post found with the given slug.</div>
       </div>
-      
-    : 
-      <Spinner />
-    }
-  </>
-);
-  
-}
+    );
+  }
 
-export default Page
+  return (
+    <div className='flex flex-col w-full max-w-[786px] mb-10'>
+      {getPost && Object.keys(getPost).length > 0 && (
+        <Post
+          title={getPost.name}
+          date={getPost.Date}
+          categoryName={getPost.categoryName}
+          body={getPost.content}
+          imgUrl={`${getPost.imgUrl}?t=${new Date().getTime()}`} // Add timestamp to force reload
+        />
+      )}
+    </div>
+  );
+};
+
+export default Page;
