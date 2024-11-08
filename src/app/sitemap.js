@@ -4,7 +4,7 @@ import { fetchPost } from "./page";
 
 const sitemap = async() => {
   
-  
+
     const posts=await fetchPost();
     // console.log(posts)
       const postUrl=posts.map((post)=>{
@@ -22,7 +22,7 @@ const sitemap = async() => {
           url: `https://blog.aryanpamwani.in/`,
           changeFrequency: 'weekly',
           priority: 1,
-          lastModified:new Date(Date),
+          lastModified:new Date(),
         },
        
         ...postUrl, 
