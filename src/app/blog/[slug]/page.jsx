@@ -43,7 +43,7 @@ export const generateMetadata = async ({ params }) => {
       description: `Posts with the tag ${params.slug}`,
       type: "website",
       locale: "en_US",
-      url: `https://blog.aryanpamwani.me/blog/${params.slug}`,
+      url: `https://blog.aryanpamwani.in/blog/${params.slug}`,
       siteName: "Aryan Pamwani's Blog",
     },
   };

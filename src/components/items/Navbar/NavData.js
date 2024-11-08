@@ -5,23 +5,23 @@ export const navItems=[
     } ,
     {
       name:"About",
-      location:"https://aryanpamwani.me/about"
+      location:"https://aryanpamwani.in/about"
     } ,
     {
       name:"Skills",
-      location:"https://aryanpamwani.me/skills"
+      location:"https://aryanpamwani.in/skills"
     } ,
     {
         name:"Project",
-        location:"https://aryanpamwani.me/projects"
+        location:"https://aryanpamwani.in/projects"
       } ,
       {
         name:"Blog",
-        location:"https://blog.aryanpamwani.me"
+        location:"https://blog.aryanpamwani.in"
       } ,
     {
       name:"Hire Me",
-      location:"https://aryanpamwani.me/contact"
+      location:"https://aryanpamwani.in/contact"
     } ,
    
 

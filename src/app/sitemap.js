@@ -8,7 +8,7 @@ const sitemap = async() => {
     // console.log(posts)
       const postUrl=posts.map((post)=>{
     return{
-      url: `https://blog.aryanpamwani.me/blog/${post.slug}`,
+      url: `https://blog.aryanpamwani.in/blog/${post.slug}`,
       lastModified: post.Date,
     }
       })
@@ -16,7 +16,7 @@ const sitemap = async() => {
 
       return [
         {
-          url: `https://blog.aryanpamwani.me/`,
+          url: `https://blog.aryanpamwani.in/`,
           lastModified:new Date(Date.now()),
         },
        
