@@ -1,16 +1,6 @@
 import { dateFormat } from "@/lib/dateFormat";
-import axios from "axios";
 
-export const fetchPost = async () => {
-  try {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall`);
-    return response.data?.allCategories;  // Assuming allCategories is the array of posts
-  } catch (error) {
-    console.log(error);
-    return [];  // Return an empty array if there is an error
-  }
-};
-
+import { fetchPost } from "./page";
 
 const sitemap = async() => {
   
@@ -31,7 +21,7 @@ const sitemap = async() => {
           url: `https://blog.aryanpamwani.in/`,
           changeFrequency: 'weekly',
           priority: 1,
-          lastModified:new Date(),
+          lastModified:new Date(Date),
         },
        
         ...postUrl, 
