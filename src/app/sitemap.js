@@ -4,6 +4,7 @@ import { fetchPost } from "./page";
 
 const sitemap = async() => {
   
+  
     const posts=await fetchPost();
     // console.log(posts)
       const postUrl=posts.map((post)=>{
