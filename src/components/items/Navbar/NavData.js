@@ -5,15 +5,15 @@ export const navItems=[
     } ,
     {
       name:"About",
-      location:"https://aryanpamwani.in/about"
+      location:"https://www.aryanpamwani.in/about"
     } ,
     {
       name:"Skills",
-      location:"https://aryanpamwani.in/skills"
+      location:"https://www.aryanpamwani.in/skills"
     } ,
     {
         name:"Project",
-        location:"https://aryanpamwani.in/projects"
+        location:"https://www.aryanpamwani.in/projects"
       } ,
       {
         name:"Blog",
@@ -21,7 +21,7 @@ export const navItems=[
       } ,
     {
       name:"Hire Me",
-      location:"https://aryanpamwani.in/contact"
+      location:"https://www.aryanpamwani.in/contact"
     } ,
    
 
