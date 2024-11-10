@@ -12,7 +12,7 @@ const sitemap = async() => {
       url: `https://blog.aryanpamwani.in/blog/${post.slug}`,
       changeFrequency: 'weekly',
       priority: 1,
-      lastModified: post.Date,
+      lastModified: Date(post.Date).toISOString(),
     }
       })
       // console.log(postUrl)
@@ -22,7 +22,7 @@ const sitemap = async() => {
           url: `https://blog.aryanpamwani.in/`,
           changeFrequency: 'weekly',
           priority: 1,
-          lastModified:new Date(),
+          lastModified:new Date().toISOString(),
         },
        
         ...postUrl, 
