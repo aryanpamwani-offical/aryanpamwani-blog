@@ -2,7 +2,7 @@
 
 import { useTheme } from '@/components/Features/reducers/useTheme';
 import React from 'react'
-import { useSelector } from 'react-redux';
+
 
 const ThemeMaker = ({children}) => {
   const [lightTheme] =useTheme();

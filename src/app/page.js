@@ -3,15 +3,6 @@ import Hero from "@/components/items/HeroSection/Hero";
 import SearchBar from "@/components/items/Search/Search";
 import axios from "axios";
 
-export const fetchPost = async () => {
-  try {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall`);
-    return response.data?.allCategories;  // Assuming allCategories is the array of posts
-  } catch (error) {
-    console.log(error);
-    return [];  // Return an empty array if there is an error
-  }
-};
 
 export const metadata ={
   metadataBase: new URL("https://blog.aryanpamwani.in"),
@@ -28,7 +19,18 @@ export const metadata ={
 
   }
 }
-const categoryData = async () => {
+
+export const fetchPost = async () => {
+  try {
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall`);
+    return response.data?.allCategories;  // Assuming allCategories is the array of posts
+  } catch (error) {
+    console.log(error);
+    return [];  // Return an empty array if there is an error
+  }
+};
+
+export const categoryData = async () => {
   try {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/category/showall`);
     return response.data.allCategories;
@@ -38,7 +40,7 @@ const categoryData = async () => {
   }
 };
 
-const searchData = async (search) => {
+export const searchData = async (search) => {
   try {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/?search=${search}`);
     return response.data;
@@ -48,7 +50,7 @@ const searchData = async (search) => {
   }
 };
 
-const postData = async () => {
+export const postData = async () => {
   try {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall`);
     return response.data.allCategories;
@@ -69,11 +71,17 @@ export default async function Home({ searchParams }) {
 
   return (
     <>
-      <Hero />
+      <Hero
+      firstText={"Designing Your"}
+      lastText={"Dream"}
+      isHero={true}
+      
+      />
       <SearchBar initialSearchResults={searchResults} />
       <CategoryClient 
         categoryData={Categorydata} 
         postData={Postdata} 
+        checkBlogPage={false}
       />
     </>
   );

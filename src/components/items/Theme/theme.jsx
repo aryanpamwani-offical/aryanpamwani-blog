@@ -6,7 +6,7 @@ import React from 'react';
 const ThemeChooser = () => {
   const [lightTheme, toggleTheme] = useTheme();
 
-  console.log('Current theme:', lightTheme); // Log the theme state
+  // console.log('Current theme:', lightTheme); // Log the theme state
 
   return (
     <div onClick={toggleTheme} className={lightTheme ? "theme-btn dark-btn" : "theme-btn light-btn"}>

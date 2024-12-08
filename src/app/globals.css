@@ -396,3 +396,15 @@ ol{
     font-size: 1.5rem; /* 24px */
   }
 }
+.arrow-light{
+   @apply bg-[var(--grey-006)] hover:bg-[var(--grey-004)] hover:text-[color:var(--grey-007)] p-2 rounded-lg cursor-pointer lg:flex md:flex sm:flex  transition-theme
+}
+.arrow-dark{
+  @apply bg-[var(--grey-002)] hover:bg-[var(--grey-003)] hover:text-[color:var(--grey-005)] p-2 rounded-lg cursor-pointer lg:flex md:flex sm:flex  transition-theme
+}
+
+
+/* Blogs */
+.blog-blogpost{
+  @apply  border border-opacity-60 rounded-lg overflow-hidden flex flex-row w-full h-60 mb-5
+}

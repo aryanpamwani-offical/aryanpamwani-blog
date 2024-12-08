@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { useSelector } from 'react-redux';
+
 import { Input } from '@/components/ui/input';
 import { useDebounce } from 'use-debounce';
 import Link from 'next/link';
@@ -42,7 +42,7 @@ const SearchBar = ({ initialSearchResults }) => {
 
   const handleSearchClick = () => {
     if (debouncedQuery=="" || !debouncedQuery) {
-      console.log("No Query")
+      // console.log("No Query")
     }
     else{
   
@@ -51,7 +51,7 @@ const SearchBar = ({ initialSearchResults }) => {
       window.location.href = url;
     }
   };
-console.log(searchResults);
+// console.log(searchResults);
   return (
     <>
       <div className="flex w-full justify-center items-center space-x-2 relative mt-20">
