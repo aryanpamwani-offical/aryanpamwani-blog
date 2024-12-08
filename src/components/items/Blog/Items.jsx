@@ -15,8 +15,11 @@ const shortDesc = description.length > 100 ? `${description.substring(0, 100)}..
   return (
    
     
-    <div className= {`${lightTheme?`${checkBlogPage?`blog-blogpost`:`blogpost`} footer-light transition-theme`:`${checkBlogPage?`blog-blogpost`:`blogpost`} blogpost-dark transition-theme`} `} >
-      <img className= {`${checkBlogPage?" w-fit h-60":"lg:h-auto md:h-auto w-full object-cover object-center"}`}  src={imgUrl} alt="blog"/>
+    <div className= {`${lightTheme?`${checkBlogPage?`blog-blogpost `:`blogpost`} footer-light transition-theme`:`${checkBlogPage?`blog-blogpost`:`blogpost`} blogpost-dark transition-theme`} `} >
+  <div className= {`${lightTheme?`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full `:`blogpost`}  transition-theme`:`${checkBlogPage?`blog-blogpost `:`blogpost`} blogpost-dark transition-theme`} `}>
+  <img className= {`${checkBlogPage?"  h-full":"lg:h-auto md:h-auto w-full object-cover object-center"}`}  src={imgUrl} alt="blog"/>
+  </div>
+    
       <div className="p-6">
         <h2 className={`${lightTheme?"blogpost-category blogpost-category-light ":"blogpost-category blogpost-category-dark"}`}>{category}</h2>
         <h1 className="title-font text-lg font-medium text-[color:var(--grey-002) mb-3 opens-sans">{title}</h1>

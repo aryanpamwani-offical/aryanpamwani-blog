@@ -408,5 +408,5 @@ ol{
 
 /* Blogs */
 .blog-blogpost{
-  @apply  border border-opacity-60 rounded-lg overflow-hidden flex flex-row w-full h-60 mb-5
+  @apply  border border-opacity-60 h-auto rounded-lg overflow-hidden flex lg:flex-row w-full  mb-5 md:flex-row sm:flex-col flex-col 
 }
