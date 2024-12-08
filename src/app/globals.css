@@ -164,7 +164,9 @@ filter: grayscale(1) invert(1);
 .navbar.nav-dark {
   @apply border-b border-[color:var(--grey-004)];
 }
-
+.nav-disabled{
+pointer-events: none;
+}
 /* BlogPost */
 .blogpost{
   @apply h-full border border-opacity-60 rounded-lg overflow-hidden

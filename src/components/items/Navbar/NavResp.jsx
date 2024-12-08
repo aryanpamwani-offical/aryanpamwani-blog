@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useTheme } from '@/components/Features/reducers/useTheme';
 import { MdOutlineClose } from "react-icons/md";
 
+
 const NavResp = () => {
   const [status, setStatus] = useState(false);
   const [lightTheme] = useTheme();
@@ -46,7 +47,7 @@ const NavResp = () => {
           }
         </div>
 
-        <ul className={`flex flex-col space-grotesk transition-all ease-in-out ${status ? 'opacity-100 translate-y-0 duration-1000' : 'opacity-0 -translate-y-10 duration-500'} content-center items-center justify-center m-auto w-full`}>
+        <ul className={`flex flex-col space-grotesk transition-all ease-in-out ${status ? 'opacity-100 translate-y-0 duration-1000' : 'opacity-0 -translate-y-10 duration-500 nav-disabled'} content-center items-center justify-center m-auto w-full`}>
           {navItems?.slice(items - 3, items - 1).map((item, key) => (
             <li className="flex flex-col duration-1000 transition nav-animate-open ease-in-out content-center m-auto my-5 hover:font-bold font-medium" key={key}>
               <Link href={item.location} onClick={() => setStatus(false)} className='duration-1000 transition nav-animate-open ease-in-out opens-sans rounded-md relative inter underline-effect'>
