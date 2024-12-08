@@ -1,4 +1,4 @@
-import { dateFormat } from "@/lib/dateFormat";
+
 
 import { fetchPost } from "./page";
 
@@ -12,7 +12,7 @@ const sitemap = async() => {
       url: `https://blog.aryanpamwani.in/blog/${post.slug}`,
       changeFrequency: 'weekly',
       priority: 1,
-      lastModified: Date(post.Date).toISOString(),
+      lastModified:new Date(post.Date).toISOString(),
     }
       })
       // console.log(postUrl)
