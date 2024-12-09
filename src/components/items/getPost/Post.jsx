@@ -6,7 +6,7 @@ import parse from 'html-react-parser';
 import Image from 'next/image';
 import Breadcrum from '../Breadcrum/Breadcrum';
 import { Skeleton } from "@/components/ui/skeleton";
-
+import { CldImage } from 'next-cloudinary';
 const Post = ({ title, date, categoryName, body, imgUrl }) => {
     const [lightTheme] = useTheme();
     const [loading, setLoading] = useState(true);
@@ -32,10 +32,11 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
                     <Skeleton  className={`${lightTheme?"rounded-2xl w-full h-full absolute inset-0l ":"rounded-2xl w-full h-full absolute inset-0 bg-[var(--grey-003)]"}`} />
                 )}
                 {imgUrl && (
-                    <Image
+                    <CldImage
+                 
                         src={imgUrl}
                         alt={categoryName}
-                       fill
+                        fill
                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className={`rounded-2xl ${loading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500 w-full h-full absolute inset-0 object-cover`}
                         priority={true}
@@ -48,6 +49,8 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
                             setImageError(true);
                             setLoading(false);
                         }}
+                        gravity='auto'
+                        unoptimized="true"
                     />
                 )}
                 {imageError && <p className="text-red-500 absolute inset-0 flex justify-center items-center">Failed to load image.</p>}

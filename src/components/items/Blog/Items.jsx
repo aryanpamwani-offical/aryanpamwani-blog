@@ -18,12 +18,14 @@ const shortDesc = description.length > 100 ? `${description.substring(0, 100)}..
     
     <div className= {`${lightTheme?`${checkBlogPage?`blog-blogpost `:`blogpost`} footer-light transition-theme`:`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full`:`blogpost`} blogpost-dark transition-theme`} `} >
   <div className= {`${lightTheme?`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full `:`blogpost`}  transition-theme`:`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full `:`blogpost`} blogpost-dark transition-theme`} `}>
-  <Image
+  <CldImage
    width={200}
    height={200}
    className={`${checkBlogPage?"  h-full":"lg:h-auto md:h-auto w-full object-cover object-center"}`}   
    src={imgUrl}
-    alt="blog"/>
+    alt="blog"
+    unoptimized="true"
+    />
   </div>
     
       <div className="p-6">
