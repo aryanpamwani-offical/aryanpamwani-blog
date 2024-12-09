@@ -36,7 +36,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
                         src={imgUrl}
                         alt={categoryName}
                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className={`rounded-2xl ${loading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500 w-full h-full absolute inset-0 object-cover`}
                         priority={true}
                         onLoad={() => {

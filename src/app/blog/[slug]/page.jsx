@@ -1,18 +1,10 @@
 import Spinner from '@/components/items/Spinner/Spinner';
 import React from 'react';
 import Post from '@/components/items/getPost/Post';
+import { fetchPost } from '@/lib/apiCalls';
 
 
-const fetchPosts = async () => {
-  try {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall/`);
-    response = await response.json();
-    return response.allCategories; // Assuming the API returns all posts in this format
-  } catch (error) {
-    console.log(error);
-    return [];
-  }
-};
+
 
 const filterPostBySlug = (posts, slug) => {
   return posts?.find(post => post.slug === slug);
@@ -20,7 +12,7 @@ const filterPostBySlug = (posts, slug) => {
 
 export const generateMetadata = async ({ params }) => {
   const { slug } = params;
-  const allPosts = await fetchPosts();
+  const allPosts = await fetchPost();
   const getPost = filterPostBySlug(allPosts, slug);
 
   if (!getPost) {
@@ -51,7 +43,7 @@ export const generateMetadata = async ({ params }) => {
 
 const Page = async ({ params }) => {
   const { slug } = params;
-  const allPosts = await fetchPosts();
+  const allPosts = await fetchPost();
   const getPost = filterPostBySlug(allPosts, slug);
 
   if (!getPost) {
@@ -71,7 +63,7 @@ const Page = async ({ params }) => {
           date={getPost.Date}
           categoryName={getPost.categoryName}
           body={getPost.content}
-          imgUrl={`${getPost.imgUrl}?t=${new Date().getTime()}`} // Add timestamp to force reload
+          imgUrl={`${getPost.imgUrl}`} // Add timestamp to force reload
         />
       )}
     </div>
