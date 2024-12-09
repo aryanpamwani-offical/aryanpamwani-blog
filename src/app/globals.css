@@ -169,7 +169,7 @@ pointer-events: none;
 }
 /* BlogPost */
 .blogpost{
-  @apply h-full border border-opacity-60 rounded-lg overflow-hidden
+  @apply h-full border border-opacity-60 rounded-lg overflow-hidden flex flex-col
 }
 
 .blogpost-category{

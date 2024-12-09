@@ -24,7 +24,12 @@ const sitemap = async() => {
           priority: 1,
           lastModified:new Date().toISOString(),
         },
-       
+        {
+          url: `https://blog.aryanpamwani.in/blog`,
+          changeFrequency: 'weekly',
+          priority: 1,
+          lastModified:new Date().toISOString(),
+        },
         ...postUrl, 
       ]
 }
