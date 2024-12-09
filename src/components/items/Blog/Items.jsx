@@ -2,10 +2,11 @@
 import React, { } from 'react'
 
 import Link from 'next/link';
-
+import { CldImage } from 'next-cloudinary';
 import { buttonVariants } from '@/components/ui/button';
 import { dateFormat } from '@/lib/dateFormat';
 import { useTheme } from '@/components/Features/reducers/useTheme';
+import Image from 'next/image';
 
 const BlogItems = ({imgUrl,title,desc,category,postId,date,slug,checkBlogPage}) => {
 // Convert desc to a string first
@@ -17,7 +18,12 @@ const shortDesc = description.length > 100 ? `${description.substring(0, 100)}..
     
     <div className= {`${lightTheme?`${checkBlogPage?`blog-blogpost `:`blogpost`} footer-light transition-theme`:`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full`:`blogpost`} blogpost-dark transition-theme`} `} >
   <div className= {`${lightTheme?`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full `:`blogpost`}  transition-theme`:`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full `:`blogpost`} blogpost-dark transition-theme`} `}>
-  <img className= {`${checkBlogPage?"  h-full":"lg:h-auto md:h-auto w-full object-cover object-center"}`}  src={imgUrl} alt="blog"/>
+  <Image
+   width={200}
+   height={200}
+   className={`${checkBlogPage?"  h-full":"lg:h-auto md:h-auto w-full object-cover object-center"}`}   
+   src={imgUrl}
+    alt="blog"/>
   </div>
     
       <div className="p-6">

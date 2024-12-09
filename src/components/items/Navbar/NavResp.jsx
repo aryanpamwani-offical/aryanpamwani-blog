@@ -6,6 +6,7 @@ import { navItems } from './NavData';
 import Image from 'next/image';
 import { useTheme } from '@/components/Features/reducers/useTheme';
 import { MdOutlineClose } from "react-icons/md";
+import { cloudinaryImageLoader } from '@/lib/cloudinaryImageOptimize';
 
 
 const NavResp = () => {
@@ -19,7 +20,8 @@ const NavResp = () => {
         <div className="flex justify-start w-1/3 m-auto p-5 h-24">
           <Link href={"/"}>
             <Image 
-              src="https://res.cloudinary.com/dttek3gqg/image/upload/v1724921045/navlogo_a1hivv.webp" 
+             loader={cloudinaryImageLoader}
+              src="v1724921045/navlogo_a1hivv.webp" 
               width={80} 
               height={80} 
               className='w-auto h-20 pl-6 ml-10 -mt-4' 
@@ -31,7 +33,8 @@ const NavResp = () => {
         <div className="flex justify-end w-2/3 p-5" onClick={() => setStatus(!status)}>
           {!status ? 
             <Image 
-              src="https://res.cloudinary.com/dttek3gqg/image/upload/v1724922497/menu_crwwxl.png" 
+            loader={cloudinaryImageLoader}
+              src="v1724922497/menu_crwwxl.png" 
               width={56} 
               height={56} 
               className={`${lightTheme ? 'w-auto h-8' : 'w-auto h-8 icon-dark'} my-auto pl-6 ml-5`} 

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import React from 'react';
 import { navItems } from './NavData';
 import { useTheme } from '@/components/Features/reducers/useTheme';
+import { cloudinaryImageLoader } from '@/lib/cloudinaryImageOptimize';
 
 const NavPc = () => {
   const [lightTheme] = useTheme();
@@ -16,7 +17,8 @@ const NavPc = () => {
         <div className="flex content-center justify-start w-1/3 p-5">
           <Link href={"/"}>
             <Image 
-              src="https://res.cloudinary.com/dttek3gqg/image/upload/v1724921045/navlogo_a1hivv.webp" 
+             loader={cloudinaryImageLoader}
+              src="v1724921045/navlogo_a1hivv.webp" 
               width={90} 
               height={90} 
               className='w-auto h-20 pl-6 ml-10' 
