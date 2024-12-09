@@ -1,37 +1,38 @@
+import { fetchPost } from "@/lib/apiCalls";
 
+ const sitemap = async () => {
+  try {
+    const posts = await fetchPost();
 
-import { fetchPost } from "./page";
+    if (!posts ) {
+      throw new Error("No posts found");
+    }
 
-const sitemap = async() => {
-  
-
-    const posts=await fetchPost();
-    // console.log(posts)
-      const postUrl=posts.map((post)=>{
-    return{
+    const postUrls = posts.map((post) => ({
       url: `https://blog.aryanpamwani.in/blog/${post.slug}`,
       changeFrequency: 'weekly',
       priority: 1,
-      lastModified:new Date(post.Date).toISOString(),
-    }
-      })
-      // console.log(postUrl)
+      lastModified: new Date(post.Date).toISOString(),
+    }));
 
-      return [
-        {
-          url: `https://blog.aryanpamwani.in/`,
-          changeFrequency: 'weekly',
-          priority: 1,
-          lastModified:new Date().toISOString(),
-        },
-        {
-          url: `https://blog.aryanpamwani.in/blog`,
-          changeFrequency: 'weekly',
-          priority: 1,
-          lastModified:new Date().toISOString(),
-        },
-        ...postUrl, 
-      ]
-}
-
+    return [
+      {
+        url: `https://blog.aryanpamwani.in/`,
+        changeFrequency: 'weekly',
+        priority: 1,
+        lastModified: new Date().toISOString(),
+      },
+      {
+        url: `https://blog.aryanpamwani.in/blog`,
+        changeFrequency: 'weekly',
+        priority: 1,
+        lastModified: new Date().toISOString(),
+      },
+      ...postUrls,
+    ];
+  } catch (error) {
+    console.error("Failed to generate sitemap:", error);
+    return [];
+  }
+};
 export default sitemap
