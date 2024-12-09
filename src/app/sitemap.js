@@ -1,35 +1,55 @@
-export default function sitemap() {
+import { fetchPost } from "@/lib/apiCalls";
+
+
+const sitemap = async () => {
+  try {
+    const posts = await fetchPost();
+    console.log("Fetched Posts:", posts); // Verify the output
+
+    const postUrls = posts.map((post) => ({
+      url: `https://blog.aryanpamwani.in/blog/${post.slug}`,
+      changeFrequency: 'weekly',
+      priority: 1,
+      lastModified: new Date(post.Date).toISOString(),
+    }));
+
+    const sitemapContent = [
+      {
+        url: `https://blog.aryanpamwani.in/`,
+        changeFrequency: 'weekly',
+        priority: 1,
+        lastModified: new Date().toISOString(),
+      },
+      {
+        url: `https://blog.aryanpamwani.in/blog`,
+        changeFrequency: 'weekly',
+        priority: 1,
+        lastModified: new Date().toISOString(),
+      },
+      ...postUrls,
+    ];
+
+    console.log("Sitemap Content:", sitemapContent); // Verify the sitemap content
+
+    return sitemapContent;
+  } catch (error) {
+    console.error("Failed to generate sitemap:", error);
     return [
       {
-        url: 'https://aryanpamwani.in/',
-        lastModified: new Date(),
-        changeFrequency: 'yearly',
-        
+        url: `https://blog.aryanpamwani.in/`,
+        changeFrequency: 'weekly',
         priority: 1,
+        lastModified: new Date().toISOString(),
       },
       {
-        url: 'https://aryanpamwani.in/about',
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.8,
-      },
-      {
-        url: 'https://aryanpamwani.in/skills',
-        lastModified: new Date(),
+        url: `https://blog.aryanpamwani.in/blog`,
         changeFrequency: 'weekly',
-        priority: 0.5,
+        priority: 1,
+        lastModified: new Date().toISOString(),
       },
-      {
-        url: 'https://aryanpamwani.in/projects',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.3,
-      },
-      {
-        url: 'https://aryanpamwani.in/contact',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.3,
-      },
-    ]
+    ];
   }
+};
+
+export default sitemap;
+ 
