@@ -2,18 +2,18 @@ import { fetchPost } from "@/lib/apiCalls";
 
  const sitemap = async () => {
   try {
-    const posts = await fetchPost();
+    // const posts = await fetchPost();
 
-    if (!posts ) {
-      throw new Error("No posts found");
-    }
+    // if (!posts ) {
+    //   throw new Error("No posts found");
+    // }
 
-    const postUrls = posts.map((post) => ({
-      url: `https://blog.aryanpamwani.in/blog/${post.slug}`,
-      changeFrequency: 'weekly',
-      priority: 1,
-      lastModified: new Date(post.Date).toISOString(),
-    }));
+    // const postUrls = posts.map((post) => ({
+    //   url: `https://blog.aryanpamwani.in/blog/${post.slug}`,
+    //   changeFrequency: 'weekly',
+    //   priority: 1,
+    //   lastModified: new Date(post.Date).toISOString(),
+    // }));
 
     return [
       {
@@ -28,7 +28,7 @@ import { fetchPost } from "@/lib/apiCalls";
         priority: 1,
         lastModified: new Date().toISOString(),
       },
-      ...postUrls,
+      // ...postUrls,
     ];
   } catch (error) {
     console.error("Failed to generate sitemap:", error);
