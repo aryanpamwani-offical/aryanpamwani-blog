@@ -9,7 +9,7 @@ const Hero = ({firstText,lastText,isHero}) => {
   return (
     <section className='flex flex-col m-auto w-full my-10 '>
         <div className="flex flex-col m-auto justify-center items-center ">
-            <h1 className="lg:text-5xl md:text-4xl sm:text-3xl text-3xl justify-center ml-5 items-center text-center flex opens-sans font-bold tracking-tight ">{firstText} </h1>
+            <h1 className="lg:text-5xl md:text-4xl sm:text-3xl text-3xl justify-center  items-center text-center flex opens-sans font-bold tracking-tight ">{firstText} </h1>
             <div className="lg:text-7xl md:text-6xl sm:text-5xl text-5xl justify-center items-center text-center flex opens-sans font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-violet-600 p-2 m-2">
    {lastText}
 </div>
