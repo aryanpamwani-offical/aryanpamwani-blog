@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import BlogPost from '../Blog/BlogPost'
+import BlogPost from './BlogPost'
 import Spinner from '../Spinner/Spinner'
 import NoPostsFound from '../NoPostsFound/NoPostsFound'
 

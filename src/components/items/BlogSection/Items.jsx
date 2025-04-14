@@ -16,8 +16,8 @@ const shortDesc = description.length > 100 ? `${description.substring(0, 100)}..
   return (
    
     
-    <div className= {`${lightTheme?`${checkBlogPage?`blog-blogpost `:`blogpost`} footer-light transition-theme`:`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full`:`blogpost`} blogpost-dark transition-theme`} `} >
-  <div className= {`${lightTheme?`${checkBlogPage?`flex flex-col h-auto   aspect-video max-w-fit  md:w-2/4 lg:w-2/4 sm:w-full w-full `:`blogpost`}  transition-theme`:`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full `:`blogpost`} blogpost-dark transition-theme`} `}>
+    <div className= {`${lightTheme?`${checkBlogPage?`blog-blogpost `:`blogpost`} footer-light transition-theme`:`${checkBlogPage?`blog-blogpost`:`blogpost`} blogpost-dark transition-theme`} `} >
+  <div className= {`${lightTheme?`${checkBlogPage?`flex flex-col h-auto   aspect-video max-w-fit  md:w-2/4 lg:w-2/4 sm:w-full w-full `:`blogpost`}  transition-theme`:`${checkBlogPage?`flex flex-col h-auto   aspect-video max-w-fit  md:w-2/4 lg:w-2/4 sm:w-full w-full`:`blogpost`} blogpost-dark transition-theme`} `}>
   <CldImage
    width={200}
    height={200}
