@@ -18,7 +18,7 @@ const Footer = () => {
         height={220} 
         alt='logo' 
         priority={true} 
-        className='w-auto h-40 rounded-full mt-10'
+        className='w-24 h-24 rounded-full mt-10'
       />
       <div className="flex flex-row justify-between my-10">
         <Link href={"https://github.com/aryanpamwani-offical"}>
