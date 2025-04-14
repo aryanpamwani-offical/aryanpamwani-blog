@@ -16,8 +16,8 @@ const NavResp = () => {
 
   return (
     <>
-      <nav className={`transition-all duration-1000 ease-in-out fixed w-full border-b transition-theme ${lightTheme ? "border-[color:var(--grey-006)]" : "border-[color:var(--grey-004)]"} z-50 ${status ? 'h-screen lg:hidden md:flex sm:flex flex flex-row flex-wrap bg-inherit' : 'h-24 lg:hidden md:flex sm:flex flex flex-row flex-wrap bg-inherit'}`}>
-        <div className="flex justify-start w-1/3 m-auto p-5 h-24">
+      <nav className={`transition-all duration-1000 ease-in-out fixed w-full border-b transition-theme ${lightTheme ? "border-[color:var(--grey-006)]" : "border-[color:var(--grey-004)]"} z-50 ${status ? ' lg:hidden md:flex sm:flex flex flex-col flex-wrap bg-inherit' : 'h-24 lg:hidden md:flex sm:flex flex flex-row flex-wrap bg-inherit'}`}>
+        <div className="flex justify-around items-start   p-5 h-24 w-full">
           <Link href={"/"}>
             <Image 
              loader={cloudinaryImageLoader}
@@ -29,8 +29,7 @@ const NavResp = () => {
               priority={true} 
             />
           </Link>
-        </div>
-        <div className="flex justify-end w-2/3 p-5" onClick={() => setStatus(!status)}>
+          <div className="flex justify-end w-2/3 p-5" onClick={() => setStatus(!status)}>
           {!status ? 
             <Image 
             loader={cloudinaryImageLoader}
@@ -50,7 +49,9 @@ const NavResp = () => {
           }
         </div>
 
-        <ul className={`flex flex-col space-grotesk transition-all ease-in-out ${status ? 'opacity-100 translate-y-0 duration-1000' : 'opacity-0 -translate-y-10 duration-500 nav-disabled'} content-center items-center justify-center m-auto w-full`}>
+        </div>
+       
+        <ul className={`flex flex-col space-grotesk transition-all ease-in-out ${status ? 'opacity-100 translate-y-0 duration-1000' : 'opacity-0 -translate-y-10 duration-500 nav-disabled'}  justify-center  w-full`}>
           {navItems?.slice(items - 3, items - 1).map((item, key) => (
             <li className="flex flex-col duration-1000 transition nav-animate-open ease-in-out content-center m-auto my-5 hover:font-bold font-medium" key={key}>
               <Link href={item.location} onClick={() => setStatus(false)} className='duration-1000 transition nav-animate-open ease-in-out opens-sans rounded-md relative inter underline-effect'>

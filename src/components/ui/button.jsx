@@ -14,7 +14,7 @@ const buttonVariants = cva(
         default_borderless: "bg-primary hover:text-primary hover:bg-transparent border hover:border-primary text-primary-foreground",
         dark_borderless: " text-primary bg-white/90 hover:bg-transparent border hover:border-white/90 hover:text-white/90 ",
         default_border: "hover:bg-primary text-primary bg-transparent border border-primary hover:text-primary-foreground",
-        dark_border: " hover:text-primary hover:bg-white/90 bg-transparent border border-white/90 text-primary-forground ",
+        dark_border: "hover:text-primary hover:bg-white/90 bg-transparent border border-white/90 text-primary-foreground",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
@@ -30,7 +30,8 @@ const buttonVariants = cva(
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
       },
-    },defaultVariants: {
+    },
+    defaultVariants: {
       variant: "default",
       size: "default",
     },

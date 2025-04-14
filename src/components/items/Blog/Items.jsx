@@ -17,11 +17,11 @@ const shortDesc = description.length > 100 ? `${description.substring(0, 100)}..
    
     
     <div className= {`${lightTheme?`${checkBlogPage?`blog-blogpost `:`blogpost`} footer-light transition-theme`:`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full`:`blogpost`} blogpost-dark transition-theme`} `} >
-  <div className= {`${lightTheme?`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full `:`blogpost`}  transition-theme`:`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full `:`blogpost`} blogpost-dark transition-theme`} `}>
+  <div className= {`${lightTheme?`${checkBlogPage?`flex flex-col h-auto   aspect-video max-w-fit  md:w-2/4 lg:w-2/4 sm:w-full w-full `:`blogpost`}  transition-theme`:`${checkBlogPage?`flex flex-col h-auto lg:w-2/4 md:w-3/4 sm:w-full w-full `:`blogpost`} blogpost-dark transition-theme`} `}>
   <CldImage
    width={200}
    height={200}
-   className={`${checkBlogPage?"  h-full":"lg:h-auto md:h-auto w-full object-cover object-center"}`}   
+   className={`${checkBlogPage?" w-auto h-full":"lg:h-auto md:h-auto w-full object-cover object-center"}`}   
    src={imgUrl}
     alt="blog"
     unoptimized="true"
@@ -29,8 +29,8 @@ const shortDesc = description.length > 100 ? `${description.substring(0, 100)}..
   </div>
     
       <div className="p-6">
-        <h2 className={`${lightTheme?"blogpost-category blogpost-category-light ":"blogpost-category blogpost-category-dark"}`}>{category}</h2>
         <h1 className="title-font text-lg font-medium text-[color:var(--grey-002) mb-3 opens-sans">{title}</h1>
+        <h2 className={`${lightTheme?"blogpost-category blogpost-category-light ":"blogpost-category blogpost-category-dark"}`}>{category}</h2>
         <h2 className={`${lightTheme?"blogpost-category blogpost-category-light":"blogpost-category blogpost-category-dark"}`}>{dateFormat(date)}</h2>
      
         <p className=" text-sm font-normal text-[color:var(--grey-003) my-4 opens-sans">{shortDesc}</p>

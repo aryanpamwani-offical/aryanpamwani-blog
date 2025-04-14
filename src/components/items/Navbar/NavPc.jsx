@@ -37,7 +37,13 @@ const NavPc = () => {
               </li>
             ))}
             {navItems?.slice(items - 1, items).map((item, key) => (
-              <Link href={item.location} key={key} className={`${buttonVariants({ variant: lightTheme ? "default_border" : "dark_border" })} inter transition-theme`}>
+              <Link 
+                href={item.location} 
+                key={key} 
+                className={`${buttonVariants({ 
+                  variant: lightTheme ? "default_border" : "dark_border" 
+                })} inter transition-theme`}
+              >
                 {item.name}
               </Link>
             ))}

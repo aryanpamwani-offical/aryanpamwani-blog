@@ -4,12 +4,13 @@ export const navItems=[
       location:"/"
     } ,
     
-   
+    {
+      name:"Blog",
+      location:"/blog"
+    } ,
     
-      {
-        name:"Blog",
-        location:"/blog"
-      } ,
+    
+   
     {
       name:"Hire Me",
       location:"https://aryanpamwani.in/contact"

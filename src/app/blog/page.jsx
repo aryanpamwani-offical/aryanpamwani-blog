@@ -1,15 +1,16 @@
 
 import Breadcrum from '@/components/items/Breadcrum/Breadcrum';
-import CategoryClient from '@/components/items/Category/Category';
+
 import SearchBar from '@/components/items/Search/Search';
 import React from 'react'
 
 import Hero from '@/components/items/HeroSection/Hero';
-import { categoryData, postData, searchData } from '@/lib/apiCalls';
+import {  postData, searchData } from '@/lib/apiCalls';
+import BlogSection from '@/components/items/BlogSection/BlogSection';
 
-const page = async({searchParams}) => {
+const Page = async({searchParams}) => {
     const search = searchParams?.search ?? ''; // Safely extract search parameter
-    const Categorydata = await categoryData();
+
      
      const Postdata = await postData();
      const searchResults = search ? await searchData(search) : [];
@@ -27,14 +28,12 @@ const page = async({searchParams}) => {
      <Breadcrum title={"Blog"} />
     </div>
     <SearchBar initialSearchResults={searchResults}/>
-     <CategoryClient
-     categoryData={Categorydata} 
-     postData={Postdata} 
-     checkBlogPage={true}
-     />
-
+    <BlogSection
+    initialPosts={Postdata}
+    checkBlogPage={true}
+    />
     </div>
   )
 }
 
-export default page
+export default Page

@@ -1,6 +1,6 @@
 import Spinner from '@/components/items/Spinner/Spinner';
 import React from 'react';
-import Post from '@/components/items/getPost/Post';
+import Post from '@/components/items/Slug/Post';
 import { fetchPost } from '@/lib/apiCalls';
 
 

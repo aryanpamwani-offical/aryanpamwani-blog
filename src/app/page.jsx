@@ -1,8 +1,9 @@
-import CategoryClient from "@/components/items/Category/Category";
+
 import Hero from "@/components/items/HeroSection/Hero";
 import SearchBar from "@/components/items/Search/Search";
-import { categoryData, postData, searchData } from "@/lib/apiCalls";
 
+import BlogSection from '@/components/items/BlogSection/BlogSection'
+import { postData, searchData } from "@/lib/apiCalls";
 
 
 export const metadata ={
@@ -25,26 +26,21 @@ export const metadata ={
 export default async function Home({ searchParams }) {
   const search = searchParams?.search ?? ''; // Safely extract search parameter
 
-  const Categorydata = await categoryData();
+ 
   const Postdata = await postData();
   const searchResults = search ? await searchData(search) : [];
 
-
-
+  
   return (
     <>
       <Hero
-      firstText={"Designing Your"}
-      lastText={"Dream"}
+      firstText={"Modern Dev"}
+      lastText={"Notes"}
       isHero={true}
       
       />
       <SearchBar initialSearchResults={searchResults} />
-      <CategoryClient 
-        categoryData={Categorydata} 
-        postData={Postdata} 
-        checkBlogPage={false}
-      />
+      <BlogSection initialPosts={Postdata} checkBlogPage={false}/>
     </>
   );
 }
