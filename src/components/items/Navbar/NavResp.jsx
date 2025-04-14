@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { navItems } from './NavData';
 import Image from 'next/image';
 import { useTheme } from '@/components/Features/reducers/useTheme';
-import { MdOutlineClose } from "react-icons/md";
+import { X ,AlignJustify} from 'lucide-react';
 import { cloudinaryImageLoader } from '@/lib/cloudinaryImageOptimize';
 
 
@@ -29,21 +29,18 @@ const NavResp = () => {
               priority={true} 
             />
           </Link>
-          <div className="flex justify-end w-2/3 p-5" onClick={() => setStatus(!status)}>
+          <div className="flex justify-end items-center -mt-3 w-2/3 p-5" onClick={() => setStatus(!status)}>
+          
           {!status ? 
-            <Image 
-            loader={cloudinaryImageLoader}
-              src="v1724922497/menu_crwwxl.png" 
-              width={56} 
-              height={56} 
-              className={`${lightTheme ? 'w-auto h-8' : 'w-auto h-8 icon-dark'} my-auto pl-6 ml-5`} 
-              priority={true} 
+            <AlignJustify
+             className={`${lightTheme?"w-auto h-8":"w-8 h-8"} my-auto`}
+             
               alt='menu' 
             />
           : 
-            <MdOutlineClose 
-              className={`${lightTheme ? 'w-auto h-8 text-[var(--grey-001)]' : 'w-auto h-8 icon-dark'} my-auto pl-6 ml-5 text-4xl text-[var(--grey-001)]`} 
-              priority={true} 
+            <X
+            className={`${lightTheme?"w-auto h-8":"w-8 h-8"} my-auto`}
+              
               alt='menu' 
             />
           }
