@@ -17,11 +17,11 @@ const NavPc = () => {
         <div className="flex content-center justify-start w-1/3 p-5">
           <Link href={"/"}>
             <Image 
-             loader={cloudinaryImageLoader}
-              src="v1724921045/navlogo_a1hivv.webp" 
+            
+              src="/logo.jpg" 
               width={90} 
               height={90} 
-              className='w-auto h-20 pl-6 ml-10' 
+              className='w-auto h-20  rounded-full ml-10' 
               alt='logo' 
               priority={true} 
             />

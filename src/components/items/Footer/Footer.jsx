@@ -12,13 +12,13 @@ const Footer = () => {
   return (
     <footer className={lightTheme ? 'footer footer-light transition-theme' : 'footer footer-dark transition-theme'}>
       <Image 
-        loader={cloudinaryImageLoader}
-        src={'v1724921045/navlogo_a1hivv.webp'} 
+        
+        src={'/logo.jpg'} 
         width={220} 
         height={220} 
         alt='logo' 
         priority={true} 
-        className='w-auto h-40 mt-10'
+        className='w-auto h-40 rounded-full mt-10'
       />
       <div className="flex flex-row justify-between my-10">
         <Link href={"https://github.com/aryanpamwani-offical"}>

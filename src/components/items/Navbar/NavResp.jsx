@@ -17,14 +17,14 @@ const NavResp = () => {
   return (
     <>
       <nav className={`transition-all duration-1000 ease-in-out fixed w-full border-b transition-theme ${lightTheme ? "border-[color:var(--grey-006)]" : "border-[color:var(--grey-004)]"} z-50 ${status ? ' lg:hidden md:flex sm:flex flex flex-col flex-wrap bg-inherit' : 'h-24 lg:hidden md:flex sm:flex flex flex-row flex-wrap bg-inherit'}`}>
-        <div className="flex justify-around items-start   p-5 h-24 w-full">
+        <div className="flex justify-evenly items-start   p-5 h-24 w-full">
           <Link href={"/"}>
             <Image 
-             loader={cloudinaryImageLoader}
-              src="v1724921045/navlogo_a1hivv.webp" 
+           
+              src="/logo.jpg" 
               width={80} 
               height={80} 
-              className='w-auto h-20 pl-6 ml-10 -mt-4' 
+              className='w-auto h-20 rounded-full -mt-4' 
               alt='logo' 
               priority={true} 
             />
