@@ -7,15 +7,18 @@ export const useTheme = () => {
   const dispatch = useDispatch();
   const lightTheme = useSelector((state) => state.themeSlice);
 
+  // Initialize theme from localStorage on mount
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme');
-    if (storedTheme !== null) {
-      const parsedTheme = storedTheme === 'true';
-      if (parsedTheme !== lightTheme) {
-        dispatch(setTheme(parsedTheme));
-      }
-    }
-  }, [dispatch, lightTheme]); // Added lightTheme to dependency array
+    // Set default theme to true (light mode) if no theme is stored
+    const initialTheme = storedTheme !== null ? storedTheme === 'true' : true;
+    dispatch(setTheme(initialTheme));
+  }, []); // Run only on mount
+
+  // Update localStorage when theme changes
+  useEffect(() => {
+    localStorage.setItem('theme', lightTheme.toString());
+  }, [lightTheme]);
 
   const handleToggleTheme = () => {
     dispatch(toggleTheme());
