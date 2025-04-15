@@ -29,7 +29,7 @@ const BasePage = ({ searchParams,checkBlogPage }) => {
       fetchPost();
        
     }, [])
-  console.log(Search)
+  // console.log(Search)
   return (
     <>
     {

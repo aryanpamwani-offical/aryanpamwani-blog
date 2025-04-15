@@ -15,7 +15,7 @@ export const useTheme = () => {
         dispatch(setTheme(parsedTheme));
       }
     }
-  }, [dispatch]);
+  }, [dispatch, lightTheme]); // Added lightTheme to dependency array
 
   const handleToggleTheme = () => {
     dispatch(toggleTheme());

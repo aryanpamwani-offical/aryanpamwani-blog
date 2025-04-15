@@ -4,7 +4,7 @@ import { fetchPost } from "@/lib/apiCalls";
 const sitemap = async () => {
   try {
     const posts = await fetchPost();
-    console.log("Fetched Posts:", posts); // Verify the output
+    // console.log("Fetched Posts:", posts); // Verify the output
 
     const postUrls = posts.map((post) => ({
       url: `https://blog.aryanpamwani.in/blog/${post.slug}`,
