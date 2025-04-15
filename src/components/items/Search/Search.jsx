@@ -9,16 +9,26 @@ import { useDebounce } from 'use-debounce';
 import Link from 'next/link';
 import { BsSearch } from "react-icons/bs";
 import { useTheme } from '@/components/Features/reducers/useTheme';
+import axios from 'axios';
 
-const SearchBar = ({ initialSearchResults }) => {
+const SearchBar = () => {
   const router = useRouter();
   const [lightTheme] = useTheme();
   const [query, setQuery] = useState('');
   const [debouncedQuery] = useDebounce(query, 500);
-  const [searchResults, setSearchResults] = useState(initialSearchResults);
+  const [searchResults, setSearchResults] = useState();
   const inputRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
-
+ const searchData = async () => {
+        try {
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/?search=${search}`);
+           setSearchResults(response.data);
+        } catch (error) {
+          console.error('Error fetching search data:', error);
+          return [];
+        }
+      };
+      
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === '/') {
@@ -40,18 +50,28 @@ const SearchBar = ({ initialSearchResults }) => {
     setQuery(e.target.value);
   };
 
-  const handleSearchClick = () => {
-    if (debouncedQuery=="" || !debouncedQuery) {
-      // console.log("No Query")
-    }
-    else{
+  const handleSearchClick = async() => {
+    
+  try {
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/?search=${query}`);
+           setSearchResults(response?.data);
+
+
+  if (debouncedQuery=="" || !debouncedQuery) {
+    // console.log("No Query")
+  }
+  else{
   
-      const url = `/?search=${debouncedQuery}`;
-      router.push(url);
-      window.location.href = url;
-    }
+    const url = `/?search=${debouncedQuery}`;
+    router.push(url);
+    // window.location.href = url;
+  
+}
+  } catch (error) {
+    console.log(error)
+  }
   };
-// console.log(searchResults);
+console.log(searchResults);
   return (
     <>
       <div className="flex w-full justify-center items-center space-x-2 relative mt-20">

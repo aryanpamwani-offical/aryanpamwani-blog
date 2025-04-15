@@ -1,9 +1,5 @@
+import BasePage from "@/components/pages/Home/Page";
 
-import Hero from "@/components/items/HeroSection/Hero";
-import SearchBar from "@/components/items/Search/Search";
-
-import BlogSection from '@/components/items/BlogSection/BlogSection'
-import { postData, searchData } from "@/lib/apiCalls";
 
 
 export const metadata ={
@@ -23,24 +19,17 @@ export const metadata ={
 }
 
 
-export default async function Home({ searchParams }) {
-  const search = searchParams?.search ?? ''; // Safely extract search parameter
+const  Home=({ searchParams })=> {
 
- 
-  const Postdata = await postData();
-  const searchResults = search ? await searchData(search) : [];
 
   
   return (
     <>
-      <Hero
-      firstText={"Modern Dev"}
-      lastText={"Notes"}
-      isHero={true}
-      
-      />
-      <SearchBar initialSearchResults={searchResults} />
-      <BlogSection initialPosts={Postdata} checkBlogPage={false}/>
+    <BasePage searchParams={searchParams}
+    checkBlogPage={false}
+    />
+     
     </>
   );
 }
+export default Home
