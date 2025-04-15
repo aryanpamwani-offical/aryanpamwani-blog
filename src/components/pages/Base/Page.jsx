@@ -49,11 +49,11 @@ const BasePage = ({ searchParams,checkBlogPage }) => {
     }
     
       {
-        checkBlogPage?   <div className='flex flex-col justify-center w-full max-w-[786px]'>
+        checkBlogPage?   
     
     
         <Breadcrum noOfItems={1} Items={["Blog"]} />
-       </div>:<></>
+:<></>
       }
      
       <SearchBar searchParams={search} />
