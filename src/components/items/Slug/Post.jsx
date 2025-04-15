@@ -26,7 +26,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
                 <h1 className='text-4xl mb-1 font-semibold'>{title}</h1>
                 <p className={`${lightTheme ? "text-[color:var(--grey-004)]" : "text-[color:var(--grey-006)]"}`}>{categoryName}</p>
             </div>
-            <Breadcrum title={title} />
+            <Breadcrum noOfItems={2} Items={["Blog",title]} />
 
             <div className='relative w-full lg:h-96 my-10 md:h-80 h-60'>
                 {loading && (
