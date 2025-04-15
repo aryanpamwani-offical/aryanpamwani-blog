@@ -2,23 +2,89 @@
 import React, { useState } from 'react';
 import { useTheme } from '@/components/Features/reducers/useTheme';
 import { dateFormat } from '@/lib/dateFormat';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { Copy, Check } from 'lucide-react';
 import Breadcrum from '../Breadcrum/Breadcrum';
 import { Skeleton } from "@/components/ui/skeleton";
 import { CldImage } from 'next-cloudinary';
 import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import CodeBlock from '@/lib/CodeBlock';
-import { getProseClasses } from '@/lib/styles/proseClasses';
 
 const Post = ({ title, date, categoryName, body, imgUrl }) => {
     const [lightTheme] = useTheme();
     const [loading, setLoading] = useState(true);
     const [imageError, setImageError] = useState(false);
 
+
+ 
+
+   
+    // Function to generate dynamic prose classes based on theme
+    const getProseClasses = () => {
+        const baseClasses = "prose prose-lg max-w-none w-full  ";
+    
+        const themeClasses = lightTheme
+            ? `
+          prose-h1:text-[color:var(--grey-002)] prose-h2:text-[color:var(--grey-002)] prose-h3:text-[color:var(--grey-002)] prose-h4:text-[color:var(--grey-002)] prose-h5:text-[color:var(--grey-002)] prose-h6:text-[color:var(--grey-002)]
+          prose-p:text-[color:var(--grey-002)]
+          prose-strong:text-[color:var(--grey-002)]
+          prose-table:border prose-table:border-[color:var(--grey-003)]
+          prose-th:border prose-th:border-[color:var(--grey-003)]
+          prose-td:border prose-td:border-[color:var(--grey-003)]
+          prose-hr:border-[color:var(--grey-003)]
+          prose-pre:bg-[color:var(--grey-001)]
+        
+          /* List Styles */
+          prose-ul:list-disc prose-ul:text-[color:var(--grey-002)]
+          prose-ol:list-decimal prose-ol:text-[color:var(--grey-002)]
+          prose-li:marker:text-[color:var(--grey-002)] /* List marker color */
+          /* Checkbox Styles */
+          prose-li>input[type="checkbox"] {
+              @apply mr-2; /* Add some spacing */
+          }
+          prose-li>input[type="checkbox"]:checked+label {
+              color: var(--grey-002); /* Example: Change label color when checked */
+          }
+              /* Image Styles */
+      prose-img:mx-auto prose-img:flex prose-img:max-w-[500px]
+        `
+            : `
+          prose-h1:text-[color:var(--grey-006)] prose-h2:text-[color:var(--grey-006)] prose-h3:text-[color:var(--grey-006)] prose-h4:text-[color:var(--grey-006)] prose-h5:text-[color:var(--grey-006)] prose-h6:text-[color:var(--grey-006)]
+          prose-p:text-[color:var(--grey-005)]
+          prose-strong:text-[color:var(--grey-007)] 
+          prose-p:open-sans
+          prose-strong:font-bold
+          prose-table:border prose-table:border-[color:var(--grey-006)]
+          prose-th:border prose-th:border-[color:var(--grey-006)]
+          prose-td:border prose-td:border-[color:var(--grey-006)]
+          prose-hr:border-[color:var(--grey-004)]
+          prose-pre:bg-[color:var(--grey-001)]
+    
+          /* List Styles */
+          prose-ul:list-disc prose-ul:text-[color:var(--grey-007)]
+          prose-ol:list-decimal prose-ol:text-[color:var(--grey-007)]
+          prose-li:marker:text-[color:var(--grey-006)] /* List marker color */
+    
+          /* Checkbox Styles */
+          prose-li>input[type="checkbox"] {
+              @apply mr-2; /* Add some spacing */
+          }
+          prose-li>input[type="checkbox"]:checked+label {
+              color: var(--grey-006); /* Example: Change label color when checked */
+          }
+               prose-img:mx-auto prose-img:flex prose-img:max-w-[500px]
+        `;
+    
+        return `${baseClasses} ${themeClasses}`;
+    };
+
     return (
-        <article className='flex justify-center m-auto flex-col items-center lg:w-full w-4/5'>
+        <article className='flex justify-center m-auto w- flex-col items-center lg:w-full w-4/5'>
             <div className='my-2'>
                 <p className={`${lightTheme ? "text-[color:var(--grey-003)]" : "text-[color:var(--grey-006)]"}`}>{dateFormat(date)}</p>
             </div>
@@ -41,6 +107,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
                         className={`rounded-2xl ${loading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500 w-full h-full absolute inset-0 object-cover`}
                         priority={true}
                         onLoad={() => {
+                            // console.log('Image loaded');
                             setLoading(false);
                         }}
                         onError={(err) => {
@@ -54,7 +121,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
                 )}
                 {imageError && <p className="text-red-500 absolute inset-0 flex justify-center items-center">Failed to load image.</p>}
             </div>
-            <div className={getProseClasses(lightTheme)}>
+            <div className={getProseClasses()}>
                 <ReactMarkdown
                     components={{
                         code({ node, inline, className, children, ...props }) {
@@ -78,6 +145,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
                     {body}
                 </ReactMarkdown>
             </div>
+
         </article>
     );
 };
