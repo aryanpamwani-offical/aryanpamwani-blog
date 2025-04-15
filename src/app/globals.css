@@ -411,7 +411,7 @@ ol{
   @apply  border border-opacity-60 h-auto rounded-lg overflow-hidden flex lg:flex-row w-full  mb-5 md:flex-row sm:flex-col flex-col 
 }
 .prose table {
-  @apply w-full table-auto border-collapse;
+  @apply w-full table-auto border-separate;
 }
 
 .prose th, .prose td {

@@ -26,7 +26,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
    
     // Function to generate dynamic prose classes based on theme
     const getProseClasses = () => {
-        const baseClasses = "prose prose-lg max-w-none w-full  ";
+        const baseClasses = "prose prose-lg max-w-none w-full  prose-table:w-auto ";
     
         const themeClasses = lightTheme
             ? `
@@ -57,7 +57,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
           prose-h1:text-[color:var(--grey-006)] prose-h2:text-[color:var(--grey-006)] prose-h3:text-[color:var(--grey-006)] prose-h4:text-[color:var(--grey-006)] prose-h5:text-[color:var(--grey-006)] prose-h6:text-[color:var(--grey-006)]
           prose-p:text-[color:var(--grey-005)]
           prose-strong:text-[color:var(--grey-007)] 
-          prose-p:open-sans
+          
           prose-strong:font-bold
           prose-table:border prose-table:border-[color:var(--grey-006)]
           prose-th:border prose-th:border-[color:var(--grey-006)]
@@ -66,9 +66,9 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
           prose-pre:bg-[color:var(--grey-001)]
     
           /* List Styles */
-          prose-ul:list-disc prose-ul:text-[color:var(--grey-007)]
-          prose-ol:list-decimal prose-ol:text-[color:var(--grey-007)]
-          prose-li:marker:text-[color:var(--grey-006)] /* List marker color */
+          prose-ul:list-disc prose-ul:text-[color:var(--grey-004)] 
+          prose-ol:list-decimal prose-ol:text-[color:var(--grey-004)]
+          prose-li:marker:text-[color:var(--grey-004)] /* List marker color */
     
           /* Checkbox Styles */
           prose-li>input[type="checkbox"] {
@@ -77,7 +77,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
           prose-li>input[type="checkbox"]:checked+label {
               color: var(--grey-006); /* Example: Change label color when checked */
           }
-               prose-img:mx-auto prose-img:flex prose-img:max-w-[500px]
+               prose-img:mx-auto prose-img:flex prose-img:lg:max-w-[500px] prose-img:md:max-w-[500px] prose-img:sm:max-w-[500px] prose-img:md:max-w-[500] prose-img:max-w-auto  
         `;
     
         return `${baseClasses} ${themeClasses}`;
@@ -104,7 +104,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
                         alt={categoryName}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className={`rounded-2xl ${loading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500 w-full h-full absolute inset-0 object-cover`}
+                        className={`rounded-2xl ${loading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500 w-full h-full absolute inset-0 object-fit`}
                         priority={true}
                         onLoad={() => {
                             // console.log('Image loaded');
