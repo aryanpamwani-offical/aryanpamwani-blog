@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import BlogPostContainer from '@/components/items/BlogPost/BlogPostContainer';
+import BlogPostContainer from '@/components/items/Slug/BlogPostContainer';
 
 const getPost = (slug) => {
   return axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showsingle/${slug}`)

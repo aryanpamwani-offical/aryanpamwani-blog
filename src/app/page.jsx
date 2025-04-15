@@ -1,4 +1,4 @@
-import BasePage from "@/components/pages/Home/Page";
+import BasePage from "@/components/pages/Base/Page";
 
 
 

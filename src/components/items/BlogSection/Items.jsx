@@ -8,7 +8,7 @@ import { dateFormat } from '@/lib/dateFormat';
 import { useTheme } from '@/components/Features/reducers/useTheme';
 import Image from 'next/image';
 
-const BlogItems = ({imgUrl,title,desc,category,postId,date,slug,checkBlogPage}) => {
+const BlogItems = ({imgUrl,title,desc,category,date,slug,checkBlogPage}) => {
 // Convert desc to a string first
 const [lightTheme] =useTheme();
 const description = String(desc);
