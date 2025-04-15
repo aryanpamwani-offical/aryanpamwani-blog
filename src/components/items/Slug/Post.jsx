@@ -51,7 +51,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
               color: var(--grey-002); /* Example: Change label color when checked */
           }
               /* Image Styles */
-      prose-img:mx-auto prose-img:flex prose-img:max-w-[500px]
+    prose-img:mx-auto prose-img:flex prose-img:lg:max-w-[500px] prose-img:md:max-w-[500px] prose-img:sm:max-w-[500px] prose-img:md:max-w-[500] prose-img:max-w-auto  
         `
             : `
           prose-h1:text-[color:var(--grey-006)] prose-h2:text-[color:var(--grey-006)] prose-h3:text-[color:var(--grey-006)] prose-h4:text-[color:var(--grey-006)] prose-h5:text-[color:var(--grey-006)] prose-h6:text-[color:var(--grey-006)]
