@@ -22,8 +22,8 @@ const NavResp = () => {
             <Image 
            
            
-          loader={cloudinaryImageLoader}
-                  src={'v1744781034/logo_zk1qty.webp'} 
+    
+                  src={'/logo.webp'} 
               width={80} 
               height={80} 
               className='w-auto h-20 rounded-full -mt-4' 

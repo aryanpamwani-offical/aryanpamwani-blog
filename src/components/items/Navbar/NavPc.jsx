@@ -18,8 +18,8 @@ const NavPc = () => {
           <Link href={"/"}>
             <Image 
             
-            loader={cloudinaryImageLoader}
-                    src={'v1744781034/logo_zk1qty.webp'} 
+          
+              src={'/logo.webp'} 
               width={90} 
               height={90} 
               className='w-auto h-20  rounded-full ml-10' 

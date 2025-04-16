@@ -12,8 +12,8 @@ const Footer = () => {
   return (
     <footer className={lightTheme ? 'footer footer-light transition-theme' : 'footer footer-dark transition-theme'}>
       <Image 
-         loader={cloudinaryImageLoader}
-        src={'v1744781034/logo_zk1qty.webp'} 
+        
+        src={'/logo.webp'} 
         width={220} 
         height={220} 
         alt='logo' 

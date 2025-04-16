@@ -16,7 +16,7 @@ const BlogSection = ({ initialPosts, checkBlogPage }) => {
       if (!initialPosts?.length) {
         setTimeoutReached(true)
       }
-    }, 5000)
+    }, 1500)
 
     return () => clearTimeout(timer)
   }, [initialPosts])
