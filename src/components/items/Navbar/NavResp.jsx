@@ -21,7 +21,9 @@ const NavResp = () => {
           <Link href={"/"}>
             <Image 
            
-              src="/logo.jpg" 
+           
+          loader={cloudinaryImageLoader}
+                  src={'v1744781034/logo_zk1qty.webp'} 
               width={80} 
               height={80} 
               className='w-auto h-20 rounded-full -mt-4' 
