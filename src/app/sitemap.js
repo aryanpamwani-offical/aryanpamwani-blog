@@ -29,7 +29,7 @@ const sitemap = async () => {
       ...postUrls,
     ];
 
-    console.log("Sitemap Content:", sitemapContent); // Verify the sitemap content
+    // console.log("Sitemap Content:", sitemapContent); // Verify the sitemap content
 
     return sitemapContent;
   } catch (error) {
