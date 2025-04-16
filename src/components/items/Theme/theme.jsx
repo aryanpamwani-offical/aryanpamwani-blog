@@ -13,16 +13,16 @@ const ThemeChooser = () => {
     <div onClick={toggleTheme} className={lightTheme ? "theme-btn dark-btn" : "theme-btn light-btn"}>
       {lightTheme ? (
         <Image 
-         loader={cloudinaryImageLoader}
-        src="v1725012231/brightness_eru1xy.png"
+        
+        src="/brightness_eru1xy.png"
          width={32} height={32} 
          className="icon-dark"
           alt="dark"
           />
       ) : (
         <Image
- loader={cloudinaryImageLoader}
-         src="v1725012256/moon_zneurl.png" 
+
+         src="/moon_zneurl.png" 
         width={32}
          height={32} alt="light"
           />

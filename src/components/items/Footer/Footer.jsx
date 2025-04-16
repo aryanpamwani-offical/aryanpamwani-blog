@@ -24,8 +24,8 @@ const Footer = () => {
       <div className="flex flex-row justify-between my-10">
         <Link href={"https://github.com/aryanpamwani-offical"}>
           <Image 
-           loader={cloudinaryImageLoader}
-            src={'v1724922910/github_daezwy.png'} 
+           
+            src={'/github_daezwy.webp'} 
             width={40} 
             height={40} 
             className={lightTheme ? 'mx-2 transition-theme' : 'mx-2 icon-dark transition-theme'} 
@@ -35,8 +35,8 @@ const Footer = () => {
         </Link>
         <Link href={"https://www.linkedin.com/in/aryanpamwani"}>
           <Image 
-           loader={cloudinaryImageLoader}
-            src={'v1724922969/linkedin_fjw1l4.webp'} 
+       
+            src={'/linkedin_fjw1l4.webp'} 
             width={40} 
             height={40} 
             className={lightTheme ? 'mx-2 transition-theme' : 'mx-2 icon-dark transition-theme'} 
@@ -46,8 +46,8 @@ const Footer = () => {
         </Link>
         <Link href={"https://twitter.com/aryanpamwanii"}>
           <Image 
-            loader={cloudinaryImageLoader}
-            src={'v1724922997/twitterx_qd3jp1.png'} 
+           
+            src={'/twitterx_qd3jp1-1.webp'} 
             width={40} 
             height={40} 
             className={lightTheme ? 'mx-2 transition-theme' : 'mx-2 icon-dark transition-theme'} 
