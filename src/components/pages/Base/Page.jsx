@@ -1,34 +1,46 @@
 "use client";
-import React,{useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Hero from "@/components/items/HeroSection/Hero";
 import SearchBar from "@/components/items/Search/Search";
 import BlogSection from '@/components/items/BlogSection/BlogSection'
 
 import axios from 'axios';
 import Breadcrum from '@/components/items/Breadcrum/Breadcrum';
+import Pagination from '@/components/items/Pagination/Pagination';
 
-const BasePage = ({ searchParams,checkBlogPage }) => {
+const BasePage = ({ searchParams, checkBlogPage }) => {
     const search = searchParams?.search ?? '';
-    const [Post, setPost] = useState()
-    const [Search, setSearch] = useState();
-    const fetchPost = async () => {
-        try {
-           await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall`).then((res)=>{
+    const [posts, setPosts] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+    const [loading, setLoading] = useState(false);
 
-              setPost(res.data?.allCategories);  // Assuming allCategories is the array of posts
-          }).catch((error)=>{
-            console.log(error)
-          })
+    const fetchPost = async (page = 1) => {
+        try {
+            setLoading(true);
+            const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall?page=${page}`);
+            
+            // Extract the nested data
+            const posts = response.data?.data?.data || [];
+            const pagination = response.data?.data?.pagination || {};
+            
+            // console.log('Extracted posts:', posts);
+            // console.log('Pagination:', pagination);
+
+            setPosts(posts);
+            setTotalPages(pagination.totalPages || 1);
+            setCurrentPage(pagination.currentPage || 1);
         } catch (error) {
-          console.log(error);
-           // Return an empty array if there is an error
+            console.error('Error fetching posts:', error);
+            setPosts([]);
+        } finally {
+            setLoading(false);
         }
-      };
-     
+    };
+
     useEffect(() => {
-      fetchPost();
-       
-    }, [])
+        fetchPost(currentPage);
+    }, [currentPage]);
   // console.log(Search)
   return (
     <>
@@ -57,7 +69,14 @@ const BasePage = ({ searchParams,checkBlogPage }) => {
       }
      
       <SearchBar searchParams={search} />
-      <BlogSection initialPosts={Post} checkBlogPage={checkBlogPage} />
+      <BlogSection initialPosts={posts} checkBlogPage={checkBlogPage} />
+
+            <Pagination 
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={(page) => setCurrentPage(page)}
+            />
+       
     </>
   )
 }

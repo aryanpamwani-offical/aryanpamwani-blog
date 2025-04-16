@@ -5,10 +5,13 @@ import BlogPost from './BlogPost'
 import Spinner from '../Spinner/Spinner'
 import NoPostsFound from '../NoPostsFound/NoPostsFound'
 
-const BlogSection = ({ initialPosts,checkBlogPage }) => {
+const BlogSection = ({ initialPosts, checkBlogPage }) => {
   const [timeoutReached, setTimeoutReached] = useState(false)
 
   useEffect(() => {
+    // Reset timeout when posts change
+    setTimeoutReached(false)
+    
     const timer = setTimeout(() => {
       if (!initialPosts?.length) {
         setTimeoutReached(true)
@@ -18,22 +21,18 @@ const BlogSection = ({ initialPosts,checkBlogPage }) => {
     return () => clearTimeout(timer)
   }, [initialPosts])
 
-  
-
-  if (timeoutReached) {
-    return <NoPostsFound />
+  // First check if posts exist and have length
+  if (initialPosts && initialPosts.length > 0) {
+    return <BlogPost checkBlogPage={checkBlogPage} posts={initialPosts} />
   }
 
-  if (!initialPosts) {
+  // Show spinner while loading and timeout not reached
+  if (!timeoutReached) {
     return <Spinner />
   }
 
-  // Check if posts array is empty
-  if (initialPosts.length === 0) {
-    return <NoPostsFound />
-  }
-
-  return <BlogPost checkBlogPage={checkBlogPage} posts={initialPosts} />
+  // Show no posts found if timeout reached or explicitly empty posts
+  return <NoPostsFound />
 }
 
 export default BlogSection
