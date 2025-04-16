@@ -8,7 +8,7 @@ import Footer from "@/components/items/Footer/Footer";
 import { Provider } from "react-redux";
 import { store } from "@/components/Features/store/store";
 import { Toaster } from "@/components/ui/toaster";
-import GoogleAnalyticsTag from "@/components/items/GoogleAnalytics/GoogleAnalytics";
+// import GoogleAnalyticsTag from "@/components/items/GoogleAnalytics/GoogleAnalytics";
 
 
 export default function RootLayout({ children }) {
@@ -16,12 +16,12 @@ export default function RootLayout({ children }) {
     <Provider store={store}>
       
       <html lang="en">
-      <meta name="msvalidate.01" content="718C0BDAE2F6792C99AEDECD101D8077" />
+
         <body>
           <ThemeMaker>
-          <GoogleAnalyticsTag
+          {/* <GoogleAnalyticsTag
 containerId={"GTM-M66VDKVZ"}
-/>
+/> */}
             <Navbar />
             <div className="relative top-36 overflow-hidden">
               <div className="flex justify-center flex-col w-full m-auto items-center">
