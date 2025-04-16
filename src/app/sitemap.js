@@ -1,10 +1,14 @@
 import { fetchPost } from "@/lib/apiCalls";
 
-
 const sitemap = async () => {
   try {
-    const posts = await fetchPost();
-    // console.log("Fetched Posts:", posts); // Verify the output
+    const response = await fetchPost();
+    // Extract posts from the nested data structure
+    const posts = response?.data?.data || [];
+    
+    // Add debug logging
+    // console.log("API Response:", response);
+    // console.log("Extracted Posts:", posts);
 
     const postUrls = posts.map((post) => ({
       url: `https://blog.aryanpamwani.in/blog/${post.slug}`,
@@ -29,7 +33,7 @@ const sitemap = async () => {
       ...postUrls,
     ];
 
-    // console.log("Sitemap Content:", sitemapContent); // Verify the sitemap content
+    console.log("Sitemap Content:", sitemapContent); // Verify the sitemap content
 
     return sitemapContent;
   } catch (error) {
@@ -52,4 +56,3 @@ const sitemap = async () => {
 };
 
 export default sitemap;
- 
