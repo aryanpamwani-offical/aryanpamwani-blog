@@ -21,44 +21,40 @@ const SearchBar = () => {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleSearchClick = useCallback(async () => {
+    if (!query.trim()) return; // Don't search if query is empty
+    
     try {
       const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/?search=${query}`);
       setSearchResults(response?.data);
 
-      if (debouncedQuery === "" || !debouncedQuery) {
-        // console.log("No Query")
-      } else {
+      if (debouncedQuery) {
         const url = `/?search=${debouncedQuery}`;
         router.push(url);
       }
     } catch (error) {
-      console.log(error);
+      console.error('Search error:', error);
     }
-  }, [query, debouncedQuery, router]); // Add dependencies for handleSearchClick
-
+  }, [query, debouncedQuery, router]);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === '/') {
-        e.preventDefault(); // Prevent the default "/" character from appearing in the input
+        e.preventDefault();
         inputRef.current.focus();
       }
     };
 
     window.addEventListener('keypress', handleKeyPress);
-    handleSearchClick();
 
     return () => {
       window.removeEventListener('keypress', handleKeyPress);
     };
-  }, [handleSearchClick]); // Add handleSearchClick to dependency array
+  }, []);
 
   const handleChange = (e) => {
     setQuery(e.target.value);
   };
 
-  
-  // console.log(searchResults);
   return (
     <>
       <div className="flex w-full justify-center items-center space-x-2 relative mt-20">

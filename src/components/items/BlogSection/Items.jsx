@@ -9,7 +9,7 @@ import { useTheme } from '@/components/Features/reducers/useTheme';
 import Image from 'next/image';
 
 const BlogItems = ({imgUrl,title,desc,category,date,slug,checkBlogPage}) => {
-  console.log(title)
+  // console.log(title)
 // Convert desc to a string first
 const [lightTheme] =useTheme();
 const description = String(desc);

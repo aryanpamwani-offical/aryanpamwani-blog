@@ -3,7 +3,7 @@ import BlogItems from './Items'
 
 
 const BlogPost = ({ posts, checkBlogPage }) => {
-  console.log(posts)
+  // console.log(posts)
   return (
     <>
       <section className="container px-3 sm:px-5 py-12 sm:py-24 mx-auto body-font mb-10 sm:mb-20">
@@ -14,7 +14,7 @@ const BlogPost = ({ posts, checkBlogPage }) => {
         }`}>
           {posts.length ? (
             posts?.map(item => {
-              console.log(item)
+              // console.log(item)
               return (
                 <div 
                   className={`${
