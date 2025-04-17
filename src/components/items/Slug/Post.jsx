@@ -14,6 +14,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import CodeBlock from '@/lib/CodeBlock';
+import TableOfContents from './TableofConent';
 
 const Post = ({ title, date, categoryName, body, imgUrl }) => {
     const [lightTheme] = useTheme();
@@ -121,6 +122,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
                 )}
                 {imageError && <p className="text-red-500 absolute inset-0 flex justify-center items-center">Failed to load image.</p>}
             </div>
+            <TableOfContents content={body} />
             <div className={getProseClasses()}>
                 <ReactMarkdown
                     components={{
