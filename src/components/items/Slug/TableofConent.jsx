@@ -21,7 +21,7 @@ const TableOfContents = ({ content }) => {
         };
 
         setHeadings(extractHeadings(content));
-    }, []);
+    }, [content]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -39,7 +39,7 @@ const TableOfContents = ({ content }) => {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [centent]);
+    }, []);
 
     return (
         <nav className={`hidden lg:block sticky top-24 max-h-[calc(100vh-6rem)] overflow-auto w-full p-4 ml-8 ${
