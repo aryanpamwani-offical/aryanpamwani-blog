@@ -33,8 +33,8 @@ const Breadcrum = ({ noOfItems, Items }) => {
                                 <Link 
                                     href={item.link.toLowerCase()}
                                     className={`${lightTheme
-                                        ? "text-[color:var(--grey-003)] hover:text-[color:var(--grey-002)] lg:text-3xl md:text-2xl sm:text-2xl text-xs"
-                                        : "text-[color:var(--grey-005)] hover:text-[color:var(--grey-006)] lg:text-3xl md:text-2xl sm:text-2xl text-xs"
+                                        ? "text-[color:var(--grey-003)] hover:text-[color:var(--grey-002)] lg:text-3xl md:text-2xl sm:text-2xl text-xs flex flex-col justify-center items-center"
+                                        : "text-[color:var(--grey-005)] hover:text-[color:var(--grey-006)] lg:text-3xl md:text-2xl sm:text-2xl text-xs flex flex-col justify-center items-center"
                                     } mx-2`}
                                 >
                                     {item.title}
@@ -42,8 +42,8 @@ const Breadcrum = ({ noOfItems, Items }) => {
                             ) : (
                                 <span 
                                     className={`${lightTheme
-                                        ? "text-[color:var(--grey-002)] lg:text-3xl md:text-2xl sm:text-2xl text-xs"
-                                        : "text-[color:var(--grey-006)] lg:text-3xl md:text-2xl sm:text-2xl text-xs"
+                                        ? "text-[color:var(--grey-002)] lg:text-3xl md:text-2xl sm:text-2xl text-xs flex flex-col justify-center items-center"
+                                        : "text-[color:var(--grey-006)] lg:text-3xl md:text-2xl sm:text-2xl text-xs flex flex-col justify-center items-center"
                                     } mx-2`}
                                 >
                                     {item.title}
