@@ -2,7 +2,7 @@
 import React from 'react'
 import { useTheme } from '@/components/Features/reducers/useTheme';
 import Link from 'next/link';
-import Image from 'next/image';
+
 import { ChevronUp } from 'lucide-react';
 
 const Upmove = () => {

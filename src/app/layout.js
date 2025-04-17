@@ -30,7 +30,7 @@ containerId={"GTM-M66VDKVZ"}
                 <Toaster/>
               </div>
               <ThemeChooser />
-              <Upmove/>
+            
               <Footer />
             </div>
           </ThemeMaker>
