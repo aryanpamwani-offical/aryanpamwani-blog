@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Post from '@/components/items/Slug/Post';
 import Spinner from '@/components/items/Spinner/Spinner';
 import axios from 'axios';
+import Upmove from './upmove';
 
 const BlogPostContainer = ({ slug }) => {
   const [post, setPost] = useState(null);
@@ -43,7 +44,8 @@ const BlogPostContainer = ({ slug }) => {
   }
 
   return (
-    <div className='flex flex-col w-full max-w-[786px] mb-10'>
+    <div className='relative' >
+    <div className='flex flex-col w-full max-w-[786px] mb-10 '>
       <Post
         title={post.name}
         date={post.Date}
@@ -51,6 +53,11 @@ const BlogPostContainer = ({ slug }) => {
         body={post.content}
         imgUrl={post.imgUrl}
       />
+
+    
+    
+    </div>
+    {/* <Upmove/> */}
     </div>
   );
 };

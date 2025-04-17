@@ -2,19 +2,17 @@
 import React, { useState } from 'react';
 import { useTheme } from '@/components/Features/reducers/useTheme';
 import { dateFormat } from '@/lib/dateFormat';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Copy, Check } from 'lucide-react';
 import Breadcrum from '../Breadcrum/Breadcrum';
 import { Skeleton } from "@/components/ui/skeleton";
-import { CldImage } from 'next-cloudinary';
+
 import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import CodeBlock from '@/lib/CodeBlock';
 import TableOfContents from './TableofConent';
+import Image from 'next/image';
 
 const Post = ({ title, date, categoryName, body, imgUrl }) => {
     const [lightTheme] = useTheme();
@@ -85,7 +83,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
     };
 
     return (
-        <article className='flex justify-center m-auto w- flex-col items-center lg:w-full w-4/5'>
+        <article className='flex justify-center m-auto w- flex-col items-center lg:w-full w-4/5' >
             <div className='my-2'>
                 <p className={`${lightTheme ? "text-[color:var(--grey-003)]" : "text-[color:var(--grey-006)]"}`}>{dateFormat(date)}</p>
             </div>
@@ -100,7 +98,7 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
                     <Skeleton className={`${lightTheme ? "rounded-2xl w-full h-full absolute inset-0l " : "rounded-2xl w-full h-full absolute inset-0 bg-[var(--grey-003)]"}`} />
                 )}
                 {imgUrl && (
-                    <CldImage
+                    <Image
                         src={imgUrl}
                         alt={categoryName}
                         fill
@@ -118,6 +116,8 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
                         }}
                         gravity='auto'
                         unoptimized="true"
+
+                        id='upmove'
                     />
                 )}
                 {imageError && <p className="text-red-500 absolute inset-0 flex justify-center items-center">Failed to load image.</p>}

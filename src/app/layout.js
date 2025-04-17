@@ -8,6 +8,7 @@ import Footer from "@/components/items/Footer/Footer";
 import { Provider } from "react-redux";
 import { store } from "@/components/Features/store/store";
 import { Toaster } from "@/components/ui/toaster";
+import Upmove from "@/components/items/Slug/upmove";
 // import GoogleAnalyticsTag from "@/components/items/GoogleAnalytics/GoogleAnalytics";
 
 
@@ -29,6 +30,7 @@ containerId={"GTM-M66VDKVZ"}
                 <Toaster/>
               </div>
               <ThemeChooser />
+              <Upmove/>
               <Footer />
             </div>
           </ThemeMaker>

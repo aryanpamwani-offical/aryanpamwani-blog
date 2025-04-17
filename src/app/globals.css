@@ -197,6 +197,20 @@ pointer-events: none;
 .light-btn {
   @apply bg-[var(--grey-007)] text-[var(--grey-001)]; 
 }
+
+/* Theme Buttons */
+.upmove-btn {
+  @apply fixed w-20 h-16 rounded-full z-40 bottom-8 left-8 shadow-md flex items-center justify-evenly cursor-pointer;
+}
+
+.dark-btn {
+  @apply bg-[var(--grey-001)] text-[var(--grey-007)];
+}
+
+.light-btn {
+  @apply bg-[var(--grey-007)] text-[var(--grey-001)]; 
+}
+
 /* Footer */
 .footer {
   @apply flex flex-col justify-center m-auto text-inherit items-center mt-auto w-full ;

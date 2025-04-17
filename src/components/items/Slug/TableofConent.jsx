@@ -44,7 +44,7 @@ const TableOfContents = ({ content }) => {
     return (
         <nav className={`hidden lg:block sticky top-24 max-h-[calc(100vh-6rem)] overflow-auto w-full p-4 ml-8 ${
             lightTheme ? "border-l border-[color:var(--grey-004)]" : "border-l border-[color:var(--grey-006)]"
-        }`}>
+        }`  } id='tableofcontent'>
             <h2 className={`text-xl font-bold mb-4 ${
                 lightTheme ? "text-[color:var(--grey-002)]" : "text-[color:var(--grey-006)]"
             }`}>
