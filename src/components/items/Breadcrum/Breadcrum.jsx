@@ -33,8 +33,8 @@ const Breadcrum = ({ noOfItems, Items }) => {
                                 <Link 
                                     href={item.link.toLowerCase()}
                                     className={`${lightTheme
-                                        ? "text-[color:var(--grey-003)] hover:text-[color:var(--grey-002)]"
-                                        : "text-[color:var(--grey-005)] hover:text-[color:var(--grey-006)]"
+                                        ? "text-[color:var(--grey-003)] hover:text-[color:var(--grey-002)] lg:text-3xl md:text-2xl sm:text-2xl text-xs"
+                                        : "text-[color:var(--grey-005)] hover:text-[color:var(--grey-006)] lg:text-3xl md:text-2xl sm:text-2xl text-"
                                     } mx-2`}
                                 >
                                     {item.title}

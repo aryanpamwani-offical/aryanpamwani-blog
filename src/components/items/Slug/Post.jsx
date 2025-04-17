@@ -13,6 +13,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import CodeBlock from '@/lib/CodeBlock';
 import TableOfContents from './TableofConent';
 import Image from 'next/image';
+import { CircleUserRound, User, UserRoundPen, Users } from 'lucide-react';
 
 const Post = ({ title, date, categoryName, body, imgUrl }) => {
     const [lightTheme] = useTheme();
@@ -85,10 +86,11 @@ const Post = ({ title, date, categoryName, body, imgUrl }) => {
     return (
         <article className='flex justify-center m-auto w- flex-col items-center lg:w-full w-4/5' >
             <div className='my-2'>
-                <p className={`${lightTheme ? "text-[color:var(--grey-003)]" : "text-[color:var(--grey-006)]"}`}>{dateFormat(date)}</p>
+                <p className={`${lightTheme ? "text-[color:var(--grey-003)] " : "text-[color:var(--grey-006)]"}`}>{dateFormat(date)}</p>
             </div>
             <div className='my-2 text-center border-1 p-2 w-full border-b'>
-                <h1 className='text-4xl mb-1 font-semibold'>{title}</h1>
+                <h1 className='lg:text-4xl mb-1 font-semibold md:text-3xl sm:text-2xl text-2xl'>{title}</h1>
+                <p className={`${lightTheme ? "text-[color:var(--grey-004)]" : "text-[color:var(--grey-006)]"} flex items-center justify-center`}><UserRoundPen className='mr-2 font-bold'/>Aryan Pamwani</p>
                 <p className={`${lightTheme ? "text-[color:var(--grey-004)]" : "text-[color:var(--grey-006)]"}`}>{categoryName}</p>
             </div>
             <Breadcrum noOfItems={2} Items={["Blog",title]} />
