@@ -34,7 +34,7 @@ const Breadcrum = ({ noOfItems, Items }) => {
                                     href={item.link.toLowerCase()}
                                     className={`${lightTheme
                                         ? "text-[color:var(--grey-003)] hover:text-[color:var(--grey-002)] lg:text-3xl md:text-2xl sm:text-2xl text-xs"
-                                        : "text-[color:var(--grey-005)] hover:text-[color:var(--grey-006)] lg:text-3xl md:text-2xl sm:text-2xl text-"
+                                        : "text-[color:var(--grey-005)] hover:text-[color:var(--grey-006)] lg:text-3xl md:text-2xl sm:text-2xl text-xs"
                                     } mx-2`}
                                 >
                                     {item.title}
@@ -42,8 +42,8 @@ const Breadcrum = ({ noOfItems, Items }) => {
                             ) : (
                                 <span 
                                     className={`${lightTheme
-                                        ? "text-[color:var(--grey-002)]"
-                                        : "text-[color:var(--grey-006)]"
+                                        ? "text-[color:var(--grey-002)] lg:text-3xl md:text-2xl sm:text-2xl text-xs"
+                                        : "text-[color:var(--grey-006)] lg:text-3xl md:text-2xl sm:text-2xl text-xs"
                                     } mx-2`}
                                 >
                                     {item.title}
@@ -52,8 +52,8 @@ const Breadcrum = ({ noOfItems, Items }) => {
                         </li>
                         {index < generateBreadcrumbs().length - 1 && (
                             <li className={`${lightTheme
-                                ? "text-[color:var(--grey-0010)]"
-                                : "text-[color:var(--grey-007)]"
+                                ? "text-[color:var(--grey-001)] lg:text-3xl md:text-2xl sm:text-2xl text-xs"
+                                : "text-[color:var(--grey-007)] lg:text-3xl md:text-2xl sm:text-2xl text-xs"
                             } mx-2`}>/</li>
                         )}
                     </React.Fragment>
