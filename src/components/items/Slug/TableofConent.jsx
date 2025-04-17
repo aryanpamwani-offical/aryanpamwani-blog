@@ -21,7 +21,7 @@ const TableOfContents = ({ content }) => {
         };
 
         setHeadings(extractHeadings(content));
-    }, [content]);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
