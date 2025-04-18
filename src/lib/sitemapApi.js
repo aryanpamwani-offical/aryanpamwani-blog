@@ -5,7 +5,8 @@
       
       return posts.data?.data?.map(post => ({
         loc: `/blog/${post.slug}`, 
-        changefreq: 'weekly', 
+        changefreq: 'daily', 
+
         priority: 0.8
       }));
     } catch (error) {
