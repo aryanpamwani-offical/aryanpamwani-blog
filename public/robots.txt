@@ -7,3 +7,4 @@ Host: https://blog.aryanpamwani.in
 
 # Sitemaps
 Sitemap: https://blog.aryanpamwani.in/sitemap.xml
+Sitemap: https://blog.aryanpamwani.in/sitemap-0.xml
