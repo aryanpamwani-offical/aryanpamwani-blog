@@ -1,4 +1,4 @@
-const { fetchPostsForSitemap } = require('./src/lib/apiCalls');
+const { fetchPostsForSitemap } = require('./src/lib/sitemapApi');
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
