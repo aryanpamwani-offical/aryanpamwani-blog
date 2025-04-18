@@ -2,14 +2,13 @@ const { fetchPostsForSitemap } = require('./src/lib/sitemapApi');
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://blog.aryanpamwani.in', // Use your actual domain
-    generateRobotsTxt: true,
-    exclude: ['/manifest.webmanifest', '/some-other-non-page'],
-    robotsTxtOptions: {
-        additionalSitemaps: [
-          'https://blog.aryanpamwani.in/sitemap-0.xml' // Update with the correct sitemap
-        ],
-    },
+  siteUrl: 'https://blog.aryanpamwani.in',
+  generateRobotsTxt: true,
+  robotsTxtOptions: {
+    additionalSitemaps: [
+      'https://blog.aryanpamwani.in/sitemap-0.xml' // Update with the correct sitemap
+    ],
+  },
      // Ensure nothing important is excluded
     additionalPaths: async (config) => {
         const blogPosts = await fetchPostsForSitemap();
@@ -21,4 +20,3 @@ module.exports = {
         ];
       }
   };
-  
