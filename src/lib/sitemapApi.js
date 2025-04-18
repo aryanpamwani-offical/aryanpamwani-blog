@@ -1,4 +1,4 @@
-export const fetchPostsForSitemap = async () => {
+ exports.fetchPostsForSitemap = async () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall`);
       const posts = await response.json();
