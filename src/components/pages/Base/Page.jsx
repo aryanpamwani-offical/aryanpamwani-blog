@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import Hero from "@/components/items/HeroSection/Hero";
 import SearchBar from "@/components/items/Search/Search";
 import BlogSection from '@/components/items/BlogSection/BlogSection'
-
 import axios from 'axios';
 import Breadcrum from '@/components/items/Breadcrum/Breadcrum';
 import Pagination from '@/components/items/Pagination/Pagination';
