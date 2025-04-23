@@ -198,7 +198,7 @@ pointer-events: none;
 
 /* Theme Buttons */
 .upmove-btn {
-  @apply fixed lg:w-20 lg:h-16 md:w-20 md:h-16 sm:w-20 sm:h-16 h-12 w-12 rounded-full z-40 bottom-7 left-11 shadow-md flex items-center justify-evenly cursor-pointer;
+  @apply fixed w-20 h-16 rounded-full z-40 bottom-7  left-8 shadow-md flex items-center justify-evenly cursor-pointer;
 }
 
 .dark-btn {
