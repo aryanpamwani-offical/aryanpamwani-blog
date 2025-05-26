@@ -20,8 +20,8 @@ const BasePage = ({ searchParams, checkBlogPage }) => {
             const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/showall?page=${page}`);
             
             // Extract the nested data
-            const posts = response.data?.data?.data || [];
-            const pagination = response.data?.data?.pagination || {};
+            const posts = response.data?.data || [];
+            const pagination = response.data?.pagination || {};
             
             // console.log('Extracted posts:', posts);
             // console.log('Pagination:', pagination);
@@ -41,6 +41,7 @@ const BasePage = ({ searchParams, checkBlogPage }) => {
         fetchPost(currentPage);
     }, [currentPage]);
   // console.log(Search)
+//   console.log(posts)
   return (
     <>
     {
